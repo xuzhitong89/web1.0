@@ -1,0 +1,42 @@
+.detail .run-summary {
+    padding-bottom: 5px;
+}
+
+.run-summary table {
+    width: 170px;
+}
+
+.run-summary  th {
+    text-align: left;
+    font-weight: normal;
+}
+
+.run-summary td {
+    width: 65px;
+    text-align: center;
+    padding: 2px 10px;
+    border: 1px solid #EFEFEF;
+    cursor: pointer;
+}
+
+.run-summary td.summary-status {
+    cursor: auto;
+}
+
+.run-summary .total {
+    background: #DFDFDF;
+    color: #000;
+    font-weight: bold;
+}
+
+.run-summary a {
+    margin-left: 4px;
+}
+
+.row-fluid:last-child {
+    margin-bottom: 0;
+}
+
+.detail label {
+    color: #919191;
+}

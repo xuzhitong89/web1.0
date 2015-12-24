@@ -1,0 +1,193 @@
+div#main-detail table.button-report {
+    border: 10px solid #E0ECFF;
+    border-width: 3px 10px;
+    background: #E0ECFF;
+    width: 100%;
+}
+div#main-detail table.button-report tbody tr:hover {
+    background: none;
+    cursor: default;
+}
+div#main-detail table.button-report tbody td {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    text-align: left;
+}
+div#main-detail div.report {
+    border-top: 1px solid #CAD4E6;
+    text-align: center;
+}
+div#main-detail div.report div.title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #222222;
+}
+button.report-prev {
+    background: url(../images/icons.gif) 0px -59px no-repeat;
+    width: 30px;
+    height: 17px;
+    cursor: pointer;
+    border: none;
+}
+button.report-next {
+    background: url(../images/icons.gif) 0px -42px no-repeat;
+    width: 30px;
+    height: 17px;
+    cursor: pointer;
+    border: none;
+}
+
+.report-control {
+    text-align: right;
+    float: left;
+}
+
+.report-control select {
+    height: 25px;
+    margin-right: 10px;
+}
+
+.report-search {
+    float: right;
+    margin-bottom: 5px;
+}
+
+.report-control input[type="text"] {
+    width: 68px;
+    line-height: 18px;
+    height: 18px;
+}
+
+#products option.deny {
+    color: #CCCCCC;
+}
+
+.report-items {
+    margin-top: 20px;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.stats-table th {
+    height: 30px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    padding: 0px 10px;
+    color: #555555;
+    vertical-align: middle;
+    border-bottom: 1px solid GRAY;
+}
+
+.stats-table td {
+    height: 30px;
+    padding: 0px 10px;
+    color: #333333;
+    vertical-align: middle;
+}
+
+.stats-table tr td {
+    background: #f0f0f0;
+}
+
+.stats-table tr.odd td {
+    background: #ffffff;
+}
+
+.stats-table tr td.col-status {
+    min-width: 60px;
+    text-align: center
+}
+
+.stats-table tr td.col-cover {
+    min-width: 40px;
+}
+
+.stats-table .col-num {
+    width: 40px;
+    text-align: right;
+    padding: 0 5px 0 0;
+}
+
+.stats-table .col-target {
+    min-width: 100px;
+    max-width: 500px;
+    text-align: left;
+    padding: 0 0 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.stats-table .col-name {
+    min-width: 100px;
+    text-align: left;
+    padding: 0 0 0 10px;
+}
+
+.stats-table .col-target img {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #cccccc;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}
+
+.stats-table .col-target span,
+.stats-table .col-target a {
+    margin: 0 5px 0 0;
+    line-height: 30px;
+}
+
+.stats-table .col-target .sub {
+    color: #999999;
+}
+
+.stats-table .col-hour {
+    width: 145px;
+    text-align: right;
+    padding: 0 20px 0 0;
+}
+
+.stats-table .col-ratio {
+    width: 250px;
+    text-align: left;
+    padding: 0 0 0 10px;
+}
+
+.stats-table .col-ratio .ratio-bar {
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    float: left;
+}
+
+.stats-table .col-ratio .passed {
+    float: left;
+    text-align: center;
+    background: #89A54E;
+}
+
+.stats-table .col-ratio .failed {
+    float: left;
+    text-align: center;
+    background: #AA4643;
+}
+
+.stats-table .col-ratio .other {
+    float: left;
+    text-align: center;
+    background: #E99D12;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.stats-table .col-ratio .ratio-num {
+    font-size: 11px;
+    margin-left: 4px;
+}

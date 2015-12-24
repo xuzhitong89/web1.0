@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="static/css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="static/css/tree.css"/>
+        <link rel="stylesheet" type="text/css" href="static/css/status.css"/>
+        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" />
+                <link rel="stylesheet" type="text/css" href="static/css/jquery.autocomplete.css" />
+<link rel="stylesheet" type="text/css" href="static/css/thickbox.css" />
+
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="static/js/jquery.ajaxQueue.js"></script>
+<script type="text/javascript" src="static/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="static/js/thickbox-compressed.js"></script>
+<script type="text/javascript" src="static/js/json2.js"></script>
+<script type="text/javascript" src="static/js/jquery.autocomplete.js"></script>
+<title>TOAST</title>
+        <script type="text/javascript" src="static/js/lib.js?ver=2"></script>
+        <script type="text/javascript" src="static/js/lib.cookie.js?ver=1"></script>
+        <script type="text/javascript" src="static/js/lib.treeview.js?ver=1"></script>
+        <script type="text/javascript" src="static/js/config.js?ver=1"></script>
+        <script type="text/javascript" src="static/js/lang.js?ver=1"></script>
+        <script type="text/javascript" src="static/js/bootstrap.js"></script>
+    </head>
+    <body>
+        <div class="bg">
+            <div class="header">
+                <div class="logo">
+                    <a href="/task">
+                        <img alt="TOAST" src="/themes/classic/assets/images/page_logo.png" />
+                    </a>
+                </div>
+                <ul id="nav">
+<li><a href="/task">任务</a></li>
+<li><a href="/report">报表</a></li>
+<li><a href="/case">用例</a></li>
+<li><a href="/machine">测试机</a></li>
+</ul><ul id="user">
+<li><a id="username" >{{username}}</a></li>
+<li><a href="/projectlist">管理入口</a></li>
+<li class="last"><a href="/logout">退出</a></li>
+</ul>            </div>
+            <div class="notify hidden">
+                NOTIFY BAR
+            </div>
+            <div class="content">
+    <div class="sub-nav">
+        <ul id="path-nav">
+<li class="first"><a href="/projectlist">产品管理</a></li>
+<li class="last"><span>新产品</span></li>
+</ul>    </div>
+    <div class="main-detail">
+        <form action="/projectlist" method="post">        <div class="button-actions clearfix">
+            <input type="submit" value="保存" name="save" class="btn" />
+            <input type="reset" value="重置" class="btn" />
+        </div>
+                <div class="detail block basic-info clearfix">
+            <div class="row-fluid">
+                <label class="span2 required" for="Product_name">产品名称 <span class="required">*</span></label><input class="span10 focus" name="Product[name]" id="Product_name" type="text" maxlength="128" />            </div>
+            <div class="row-fluid">
+                <label class="span2" for="Product_regress_notice">回归测试报告通知给</label><input class="focus span10" name="Product[regress_notice]" id="Product_regress_notice" type="text" />            </div>
+            <div class="row-fluid">
+                <label class="span2" for="Product_unit_notice">单元测试报告通知给</label><input class="focus span10" name="Product[unit_notice]" id="Product_unit_notice" type="text" />            </div>
+        </div>
+        </form>    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+    var goodexit = false;
+    function bindunbeforunload() {
+        goodexit = false;
+        window.onbeforeunload = perforresult;
+    }
+    function unbindunbeforunload() {
+        goodexit = true;
+        window.onbeforeunload = null;
+    }
+    function perforresult() {
+        if(!goodexit) {
+            return lang.sureToLeave;
+        }
+    }
+    bindunbeforunload();
+    $("input[type=submit]").click(function(){
+        unbindunbeforunload();
+    })
+    inputFocus();
+    
+    $("input#create-product").click(function(){
+        location.href = getRootPath() + "/admin/product/create";
+    })
+});
+</script>        </div>
+    <script type="text/javascript">
+/*<![CDATA[*/
+jQuery(function($) {
+$("#Product_regress_notice").autocompleter("/user/lookup", {'multiple':true,'matchCase':false,'cookieId':'task-responsible','formatResult':function(result){return result[1];}})
+$("#Product_unit_notice").autocompleter("/user/lookup", {'multiple':true,'matchCase':false,'cookieId':'task-responsible','formatResult':function(result){return result[1];}})
+});
+/*]]>*/
+</script>
+</body>
+</html>

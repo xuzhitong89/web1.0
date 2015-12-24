@@ -1,0 +1,1134 @@
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon">
+    <link href="../../static/css/reset.css?ver=1" type="text/css" rel="stylesheet">
+    <link href="../../static/css/style.css?ver=1" type="text/css" rel="stylesheet">
+    <link href="../../static/css/tree.css?ver=1" type="text/css" rel="stylesheet">
+    <link href="../../static/css/status.css?ver=1" type="text/css" rel="stylesheet">
+    <link href="../../static/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="../../static/css/jui/jquery-ui.css" type="text/css" rel="stylesheet">
+    <link href="../../static/css/styleSearch.css" type="text/css" rel="stylesheet">
+    <script src="../../static/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../static/js/jui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../../static/js/qb.js?ver=2" type="text/javascript"></script>
+    <script src="../../static/js/highstock.js" type="text/javascript"></script>
+    <title>TOAST</title>
+    <script src="../../static/js/lib.js?ver=2" type="text/javascript"></script>
+    <script src="../../static/js/lib.cookie.js?ver=1" type="text/javascript"></script>
+    <script src="../../static/js/lib.treeview.js?ver=1" type="text/javascript"></script>
+    <script src="../../static/js/config.js?ver=1" type="text/javascript"></script>
+    <script src="../../static/js/lang.js?ver=1" type="text/javascript"></script>
+    <script src="../../static/js/bootstrap.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="bg">
+    <div class="header">
+        <div class="logo">
+            <a href="/task">
+                <img src="../../static/images/page_logo.png" alt="TOAST">
+            </a>
+        </div>
+        <ul id="nav">
+            <li><a href="/task">任务</a></li>
+            <li class="active"><a href="/report">报表</a></li>
+            <li><a href="/case">用例</a></li>
+            <li><a href="/machine">测试机</a></li>
+        </ul>
+        <ul id="user">
+            <li><a href="/admin/user/update/id/2" id="username">Admin(Admin)</a></li>
+            <li><a href="/admin">管理入口</a></li>
+            <li class="last"><a href="/logout">退出</a></li>
+        </ul>
+    </div>
+    <div class="notify hidden">
+        NOTIFY BAR
+    </div>
+    <link href="../../static/css/report.css" type="text/css" rel="stylesheet">
+    <div class="content">
+        <div class="sub-nav">
+            <ul id="path-nav">
+                <li class="first last"><span>报表</span></li>
+            </ul>
+        </div>
+        <div style="padding-right: 1px" class="main-detail">
+            <div class="report-control">
+                <div class="action-group"><input type="button" value="发送报表邮件" name="yt0"
+                                                 class="btn send-current-report"></div>
+                <select name="products" id="products">
+                    <option selected="selected" value="1">Sample</option>
+                </select><select id="task_type" name="task_type">
+                <option value="1">单元测试</option>
+                <option selected="selected" value="3">功能测试</option>
+            </select><input type="text" value="2015-10-12" name="ReportRegress[date]" id="report-date-picker"
+                            class="focus"></div>
+            <div class="report-search" style="white-space: nowrap;">
+                <input type="text" id="search" name="search" autocomplete="off" placeholder="查找"
+                       class="qb-search span10">
+
+                <div title="显示高级搜索" class="qb-search-btn"></div>
+                <div class="qb-search-panel">
+                    <div class="qb-search-panel-x"></div>
+                    <div class="item table-list"><span class="table-label">搜索</span><select id="table" name="table">
+                        <option value="report">报表</option>
+                    </select></div>
+                    <div class="item condition"><select class="field">
+                        <option value="task_name">任务名称</option>
+                        <option value="project_path">所属项目</option>
+                        <option value="status">运行状态</option>
+                        <option value="responsible_username">负责人</option>
+                    </select><select class="operator">
+                        <option value="">包含</option>
+                        <option value="-">不包含</option>
+                        <option value="==">等于</option>
+                        <option value="-=">不等于</option>
+                    </select><input type="text" class="val"><select class="logic">
+                        <option value="AND">并且</option>
+                        <option value="OR">或者</option>
+                    </select><i class="add"></i><i class="del"></i></div>
+                    <div class="item action"><a href="javascript:;" class="search-btn"><i class="search"></i> 查找</a><a
+                            href="javascript:;" class="reset-query">重置搜索</a><a href="javascript:;" class="save-query">将此搜索保存</a>
+                    </div>
+                    <div class="query-list"></div>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+            <div>
+                <div id="yw0" style="height: 250px; width: 100%">
+                    <div class="highcharts-container" id="highcharts-0"
+                         style="position: relative; overflow: hidden; width: 1224px; height: 250px; text-align: left; line-height: normal; z-index: 0; font-family: &quot;Lucida Grande&quot;,&quot;Lucida Sans Unicode&quot;,Verdana,Arial,Helvetica,sans-serif; font-size: 12px; left: 0px; top: 0px; cursor: auto;">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1224" height="250">
+                            <defs>
+                                <clipPath id="highcharts-1">
+                                    <rect rx="0" ry="0" fill="none" x="0" y="0" width="9999" height="250"
+                                          stroke-width="0"/>
+                                </clipPath>
+                                <clipPath id="highcharts-2">
+                                    <rect fill="none" x="0" y="0" width="1204" height="205"/>
+                                </clipPath>
+                            </defs>
+                            <rect rx="5" ry="5" fill="#FFFFFF" x="0" y="0" width="1224" height="250" stroke-width="0"/>
+                            <g class="highcharts-series-group" zIndex="3"/>
+                            <path fill="none"
+                                  d="M 366.2217675736431 -4.375 C 361.2217675736431 -4.375 361.17986181198467 3.625002050804653 361.1821022172253 14.625001822649395 L 361.1843426224659 25.625001594494137"
+                                  stroke-width="1" stroke="#89A54E" visibility="visible" zIndex="3"
+                                  transform="translate(10,30)"/>
+                            <path fill="none"
+                                  d="M 427.7457147167859 15.125 C 422.7457147167859 15.125 361.17986181198467 3.625002050804653 361.1821022172253 14.625001822649395 L 361.1843426224659 25.625001594494137"
+                                  stroke-width="1" stroke="#AA4643" visibility="visible" zIndex="3"
+                                  transform="translate(10,30)"/>
+                            <path fill="none"
+                                  d="M 366.2316699257804 209.37499530767616 C 361.2316699257804 209.37499530767616 361.2292993114166 201.37499565891443 361.22603971672044 190.37499614186706 L 361.2227801220243 179.3749966248197"
+                                  stroke-width="1" stroke="#4572A7" visibility="hidden" zIndex="3"
+                                  transform="translate(10,30)"/>
+                            <path fill="none"
+                                  d="M 847.821767573643 -4.375 C 842.821767573643 -4.375 842.7798618119847 3.625002050804653 842.7821022172253 14.625001822649395 L 842.7843426224659 25.625001594494137"
+                                  stroke-width="1" stroke="#89A54E" visibility="visible" zIndex="3"
+                                  transform="translate(10,30)"/>
+                            <path fill="none"
+                                  d="M 909.3457147167859 15.125 C 904.3457147167859 15.125 842.7798618119847 3.625002050804653 842.7821022172253 14.625001822649395 L 842.7843426224659 25.625001594494137"
+                                  stroke-width="1" stroke="#AA4643" visibility="visible" zIndex="3"
+                                  transform="translate(10,30)"/>
+                            <path fill="none"
+                                  d="M 930.354527434902 34.625 C 925.354527434902 34.625 842.7798618119847 3.625002050804653 842.7821022172253 14.625001822649395 L 842.7843426224659 25.625001594494137"
+                                  stroke-width="1" stroke="#E99D12" visibility="visible" zIndex="3"
+                                  transform="translate(10,30)"/>
+                            <path fill="none"
+                                  d="M 847.8316699257804 209.37499530767616 C 842.8316699257804 209.37499530767616 842.8292993114165 201.37499565891443 842.8260397167204 190.37499614186706 L 842.8227801220243 179.3749966248197"
+                                  stroke-width="1" stroke="#AA4643" visibility="hidden" zIndex="3"
+                                  transform="translate(10,30)"/>
+                            <g class="highcharts-shadow" zIndex="4" transform="translate(10,30)">
+                                <path fill="none"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 0 1 361.1842657474675 25.625001610189955 L 361.2 102.5 A 0 0 0 0 0 361.2 102.5 Z"
+                                      stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.049999999999999996" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 0 1 361.1842657474675 25.625001610189955 L 361.2 102.5 A 0 0 0 0 0 361.2 102.5 Z"
+                                      stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 0 1 361.1842657474675 25.625001610189955 L 361.2 102.5 A 0 0 0 0 0 361.2 102.5 Z"
+                                      stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(1, 1)"/>
+                            </g>
+                            <g class="highcharts-shadow" zIndex="4" transform="translate(10,30)">
+                                <path fill="none"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 0 1 361.1842657474675 25.625001610189955 L 361.2 102.5 A 0 0 0 0 0 361.2 102.5 Z"
+                                      stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.049999999999999996" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 0 1 361.1842657474675 25.625001610189955 L 361.2 102.5 A 0 0 0 0 0 361.2 102.5 Z"
+                                      stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 0 1 361.1842657474675 25.625001610189955 L 361.2 102.5 A 0 0 0 0 0 361.2 102.5 Z"
+                                      stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(1, 1)"/>
+                            </g>
+                            <g class="highcharts-shadow" zIndex="4" transform="translate(10,30)" visibility="hidden">
+                                <path fill="none"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 1 1 361.17002025868686 25.62500584575561 L 361.2 102.5 A 0 0 0 1 0 361.2 102.5 Z"
+                                      stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.049999999999999996" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 1 1 361.17002025868686 25.62500584575561 L 361.2 102.5 A 0 0 0 1 0 361.2 102.5 Z"
+                                      stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 1 1 361.17002025868686 25.62500584575561 L 361.2 102.5 A 0 0 0 1 0 361.2 102.5 Z"
+                                      stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(1, 1)"/>
+                            </g>
+                            <g class="highcharts-shadow" zIndex="4" transform="translate(10,30)">
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.049999999999999996" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(1, 1)"/>
+                            </g>
+                            <g class="highcharts-shadow" zIndex="4" transform="translate(10,30)">
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.049999999999999996" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(1, 1)"/>
+                            </g>
+                            <g class="highcharts-shadow" zIndex="4" transform="translate(10,30)">
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.049999999999999996" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(1, 1)"/>
+                            </g>
+                            <g class="highcharts-shadow" zIndex="4" transform="translate(10,30)" visibility="hidden">
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 1 1 842.7700202586868 25.62500584575561 L 842.8 102.5 A 0 0 0 1 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.049999999999999996" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 1 1 842.7700202586868 25.62500584575561 L 842.8 102.5 A 0 0 0 1 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(1, 1)"/>
+                                <path fill="none"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 1 1 842.7700202586868 25.62500584575561 L 842.8 102.5 A 0 0 0 1 0 842.8 102.5 Z"
+                                      stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(1, 1)"/>
+                            </g>
+                            <g class="highcharts-point" zIndex="5" transform="translate(10,30)">
+                                <path fill="#89A54E"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 0 1 361.1842657474675 25.625001610189955 L 361.2 102.5 A 0 0 0 0 0 361.2 102.5 Z"
+                                      stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
+                                <path fill="rgb(192,192,192)"
+                                      d="M 360.98434262246593 26.125001594494137 A 76.875 76.875 0 0 1 360.98426574746753 26.125001610189955 L 361 103 A 0 0 0 0 0 361 103 Z"
+                                      isTracker="1444788964119" fill-opacity="0.000001" visibility="visible"
+                                      style="cursor:pointer;"/>
+                            </g>
+                            <g class="highcharts-point" zIndex="5" transform="translate(10,30)">
+                                <path fill="#AA4643"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 0 1 361.1842657474675 25.625001610189955 L 361.2 102.5 A 0 0 0 0 0 361.2 102.5 Z"
+                                      stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
+                                <path fill="rgb(192,192,192)"
+                                      d="M 360.98434262246593 26.125001594494137 A 76.875 76.875 0 0 1 360.98426574746753 26.125001610189955 L 361 103 A 0 0 0 0 0 361 103 Z"
+                                      isTracker="1444788964119" fill-opacity="0.000001" visibility="visible"
+                                      style="cursor:pointer;"/>
+                            </g>
+                            <g class="highcharts-point" zIndex="5" transform="translate(10,30)" visibility="hidden">
+                                <path fill="#4572A7"
+                                      d="M 361.1843426224659 25.625001594494137 A 76.875 76.875 0 1 1 361.17002025868686 25.62500584575561 L 361.2 102.5 A 0 0 0 1 0 361.2 102.5 Z"
+                                      stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
+                                <path fill="rgb(192,192,192)"
+                                      d="M 360.98434262246593 26.125001594494137 A 76.875 76.875 0 1 1 360.9700202586869 26.12500584575561 L 361 103 A 0 0 0 1 0 361 103 Z"
+                                      isTracker="1444788964119" fill-opacity="0.000001" visibility="visible"
+                                      style="cursor:pointer;"/>
+                            </g>
+                            <g class="highcharts-point" zIndex="5" transform="translate(10,30)">
+                                <path fill="#89A54E"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
+                                <path fill="rgb(192,192,192)"
+                                      d="M 842.984342622466 26.125001594494137 A 76.875 76.875 0 0 1 842.9842657474676 26.125001610189955 L 843 103 A 0 0 0 0 0 843 103 Z"
+                                      isTracker="1444788964135" fill-opacity="0.000001" visibility="visible"
+                                      style="cursor:pointer;"/>
+                            </g>
+                            <g class="highcharts-point" zIndex="5" transform="translate(10,30)">
+                                <path fill="#AA4643"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
+                                <path fill="rgb(192,192,192)"
+                                      d="M 842.984342622466 26.125001594494137 A 76.875 76.875 0 0 1 842.9842657474676 26.125001610189955 L 843 103 A 0 0 0 0 0 843 103 Z"
+                                      isTracker="1444788964135" fill-opacity="0.000001" visibility="visible"
+                                      style="cursor:pointer;"/>
+                            </g>
+                            <g class="highcharts-point" zIndex="5" transform="translate(10,30)">
+                                <path fill="#E99D12"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 0 1 842.7842657474675 25.625001610189955 L 842.8 102.5 A 0 0 0 0 0 842.8 102.5 Z"
+                                      stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
+                                <path fill="rgb(192,192,192)"
+                                      d="M 842.984342622466 26.125001594494137 A 76.875 76.875 0 0 1 842.9842657474676 26.125001610189955 L 843 103 A 0 0 0 0 0 843 103 Z"
+                                      isTracker="1444788964135" fill-opacity="0.000001" visibility="visible"
+                                      style="cursor:pointer;"/>
+                            </g>
+                            <g class="highcharts-point" zIndex="5" transform="translate(10,30)" visibility="hidden">
+                                <path fill="#AA4643"
+                                      d="M 842.7843426224659 25.625001594494137 A 76.875 76.875 0 1 1 842.7700202586868 25.62500584575561 L 842.8 102.5 A 0 0 0 1 0 842.8 102.5 Z"
+                                      stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
+                                <path fill="rgb(192,192,192)"
+                                      d="M 842.984342622466 26.125001594494137 A 76.875 76.875 0 1 1 842.9700202586869 26.12500584575561 L 843 103 A 0 0 0 1 0 843 103 Z"
+                                      isTracker="1444788964135" fill-opacity="0.000001" visibility="visible"
+                                      style="cursor:pointer;"/>
+                            </g>
+                            <g class="highcharts-data-labels" visibility="visible" zIndex="6"
+                               transform="translate(10,30)">
+                                <g zIndex="1" style="" transform="translate(371,0.625)" visibility="visible">
+                                    <rect rx="0" ry="0" fill="none" x="-2" y="-15" width="72" height="19.5"
+                                          stroke-width="0"/>
+                                    <text x="1.5" y="0"
+                                          style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                          zIndex="1">
+                                        <tspan x="1.5">通过用例: 0%</tspan>
+                                    </text>
+                                </g>
+                                <g zIndex="1" style="" transform="translate(433,20.125)" visibility="visible">
+                                    <rect rx="0" ry="0" fill="none" x="-2" y="-15" width="72" height="19.5"
+                                          stroke-width="0"/>
+                                    <text x="1.5" y="0"
+                                          style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                          zIndex="1">
+                                        <tspan x="1.5">失败用例: 0%</tspan>
+                                    </text>
+                                </g>
+                                <g zIndex="1" style="" transform="translate(371,214.37499530767616)"
+                                   visibility="hidden">
+                                    <rect rx="0" ry="0" fill="none" x="-2" y="-15" width="55" height="19.5"
+                                          stroke-width="0"/>
+                                    <text x="1.5" y="0"
+                                          style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                          zIndex="1">
+                                        <tspan x="1.5">fill: 100%</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                            <g class="highcharts-data-labels" visibility="visible" zIndex="6"
+                               transform="translate(10,30)">
+                                <g zIndex="1" style="" transform="translate(853,0.625)" visibility="visible">
+                                    <rect rx="0" ry="0" fill="none" x="-2" y="-15" width="50" height="19.5"
+                                          stroke-width="0"/>
+                                    <text x="1.5" y="0"
+                                          style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                          zIndex="1">
+                                        <tspan x="1.5">成功: 0%</tspan>
+                                    </text>
+                                </g>
+                                <g zIndex="1" style="" transform="translate(914,20.125)" visibility="visible">
+                                    <rect rx="0" ry="0" fill="none" x="-2" y="-15" width="50" height="19.5"
+                                          stroke-width="0"/>
+                                    <text x="1.5" y="0"
+                                          style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                          zIndex="1">
+                                        <tspan x="1.5">失败: 0%</tspan>
+                                    </text>
+                                </g>
+                                <g zIndex="1" style="" transform="translate(935,39.625)" visibility="visible">
+                                    <rect rx="0" ry="0" fill="none" x="-2" y="-15" width="50" height="19.5"
+                                          stroke-width="0"/>
+                                    <text x="1.5" y="0"
+                                          style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                          zIndex="1">
+                                        <tspan x="1.5">其他: 0%</tspan>
+                                    </text>
+                                </g>
+                                <g zIndex="1" style="" transform="translate(853,214.37499530767616)"
+                                   visibility="hidden">
+                                    <rect rx="0" ry="0" fill="none" x="-2" y="-15" width="55" height="19.5"
+                                          stroke-width="0"/>
+                                    <text x="1.5" y="0"
+                                          style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                          zIndex="1">
+                                        <tspan x="1.5">fill: 100%</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                            <g class="highcharts-legend" zIndex="7">
+                                <rect rx="5" ry="5" fill="none" x="0.5" y="0.5" width="7" height="7" stroke-width="1"
+                                      stroke="#909090" visibility="hidden"/>
+                                <g zIndex="1" clip-path="url(#highcharts-1)">
+                                    <g/>
+                                </g>
+                            </g>
+                            <g class="highcharts-tooltip" zIndex="8" style="padding:0;white-space:nowrap;"
+                               visibility="hidden">
+                                <rect rx="5" ry="5" fill="none" x="0" y="0" width="10" height="10" stroke-width="5"
+                                      fill-opacity="0.85" isShadow="true" stroke="black"
+                                      stroke-opacity="0.049999999999999996" transform="translate(1, 1)"/>
+                                <rect rx="5" ry="5" fill="none" x="0" y="0" width="10" height="10" stroke-width="3"
+                                      fill-opacity="0.85" isShadow="true" stroke="black"
+                                      stroke-opacity="0.09999999999999999" transform="translate(1, 1)"/>
+                                <rect rx="5" ry="5" fill="none" x="0" y="0" width="10" height="10" stroke-width="1"
+                                      fill-opacity="0.85" isShadow="true" stroke="black" stroke-opacity="0.15"
+                                      transform="translate(1, 1)"/>
+                                <rect rx="5" ry="5" fill="rgb(255,255,255)" x="0" y="0" width="10" height="10"
+                                      stroke-width="2" fill-opacity="0.85"/>
+                                <text x="5" y="18"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#333333;fill:#333333;"
+                                      zIndex="1"/>
+                            </g>
+                            <g class="highcharts-tracker" zIndex="9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div id="yw1" style="height: 400px; width: 100%">
+                    <div style="position: relative; height: 0px; font-family: &quot;Lucida Grande&quot;,&quot;Lucida Sans Unicode&quot;,Verdana,Arial,Helvetica,sans-serif; font-size: 12px; z-index: 1;">
+                        <div style="position: absolute; top: 20px; right: 10px;"><span>From:</span><input type="text"
+                                                                                                          name="min"
+                                                                                                          class="highcharts-range-selector"
+                                                                                                          style="width: 80px; height: 16px; border: 1px solid silver; margin-left: 5px; margin-right: 5px; text-align: center;"><span>To:</span><input
+                                type="text" name="max" class="highcharts-range-selector"
+                                style="width: 80px; height: 16px; border: 1px solid silver; margin-left: 5px; margin-right: 0px; text-align: center;">
+                        </div>
+                    </div>
+                    <div class="highcharts-container" id="highcharts-3"
+                         style="position: relative; overflow: hidden; width: 1224px; height: 400px; text-align: left; line-height: normal; z-index: 0; font-family: &quot;Lucida Grande&quot;,&quot;Lucida Sans Unicode&quot;,Verdana,Arial,Helvetica,sans-serif; font-size: 12px; left: 0px; top: 0px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1224" height="400">
+                            <defs>
+                                <clipPath id="highcharts-4">
+                                    <rect rx="0" ry="0" fill="none" x="0" y="0" width="9999" height="400"
+                                          stroke-width="0"/>
+                                </clipPath>
+                                <clipPath id="highcharts-5">
+                                    <rect fill="none" x="0" y="0" width="1204" height="263"/>
+                                </clipPath>
+                                <linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-8">
+                                    <stop offset="0" stop-color="#EEE" stop-opacity="1"/>
+                                    <stop offset="1" stop-color="#FFF" stop-opacity="1"/>
+                                </linearGradient>
+                                <linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-9">
+                                    <stop offset="0" stop-color="#FFF" stop-opacity="1"/>
+                                    <stop offset="1" stop-color="#CCC" stop-opacity="1"/>
+                                </linearGradient>
+                                <linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-10">
+                                    <stop offset="0" stop-color="#FFF" stop-opacity="1"/>
+                                    <stop offset="1" stop-color="#CCC" stop-opacity="1"/>
+                                </linearGradient>
+                                <linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-11">
+                                    <stop offset="0" stop-color="#FFF" stop-opacity="1"/>
+                                    <stop offset="1" stop-color="#DDD" stop-opacity="1"/>
+                                </linearGradient>
+                                <linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-12">
+                                    <stop offset="0" stop-color="#9BD" stop-opacity="1"/>
+                                    <stop offset="1" stop-color="#CDF" stop-opacity="1"/>
+                                </linearGradient>
+                                <linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-13">
+                                    <stop offset="0" stop-color="#FFF" stop-opacity="1"/>
+                                    <stop offset="1" stop-color="#DDD" stop-opacity="1"/>
+                                </linearGradient>
+                                <linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-14">
+                                    <stop offset="0" stop-color="#FFF" stop-opacity="1"/>
+                                    <stop offset="1" stop-color="#DDD" stop-opacity="1"/>
+                                </linearGradient>
+                                <linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-15">
+                                    <stop offset="0" stop-color="#FFF" stop-opacity="1"/>
+                                    <stop offset="1" stop-color="#DDD" stop-opacity="1"/>
+                                </linearGradient>
+                                <linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-16">
+                                    <stop offset="0" stop-color="#FFF" stop-opacity="1"/>
+                                    <stop offset="1" stop-color="#DDD" stop-opacity="1"/>
+                                </linearGradient>
+                                <linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-17">
+                                    <stop offset="0" stop-color="#FFF" stop-opacity="1"/>
+                                    <stop offset="1" stop-color="#DDD" stop-opacity="1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect rx="5" ry="5" fill="#FFFFFF" x="0" y="0" width="1224" height="400" stroke-width="0"/>
+                            <g transform="translate(10,372)">
+                                <rect fill="url(#highcharts-8)" x="0" y="-0.5" width="1204" height="14" stroke-width="1"
+                                      stroke="#CCC" rx="0" ry="0"/>
+                                <rect fill="url(#highcharts-9)" x="1093.5" y="-0.5" width="96" height="14"
+                                      stroke-width="1" stroke="#666" rx="2" ry="2"/>
+                                <path fill="none" stroke="#666" stroke-width="1"
+                                      d="M 1138 3.5 L 1138 9.333333333333334 M 1141 3.5 L 1141 9.333333333333334 M 1144 3.5 L 1144 9.333333333333334"
+                                      visibility="visible"/>
+                                <g>
+                                    <rect rx="2" ry="2" fill="url(#highcharts-10)" x="-0.5" y="-0.5" width="14"
+                                          height="14" stroke-width="1" stroke="#666"/>
+                                    <path fill="#666" d="M 8 4 L 8 10 5 7"/>
+                                </g>
+                                <g transform="translate(1190,0)">
+                                    <rect rx="2" ry="2" fill="url(#highcharts-10)" x="-0.5" y="-0.5" width="14"
+                                          height="14" stroke-width="1" stroke="#666"/>
+                                    <path fill="#666" d="M 6 4 L 6 10 9 7"/>
+                                </g>
+                            </g>
+                            <text x="10" y="35"
+                                  style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;">
+                                <tspan x="10">Zoom</tspan>
+                            </text>
+                            <g class="highcharts-grid" zIndex="1"/>
+                            <g class="highcharts-grid" zIndex="1">
+                                <path fill="none" d="M 10 255.5 L 1214 255.5" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                                <path fill="none" d="M 10 203.5 L 1214 203.5" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                                <path fill="none" d="M 10 150.5 L 1214 150.5" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                                <path fill="none" d="M 10 98.5 L 1214 98.5" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                                <path fill="none" d="M 10 45.5 L 1214 45.5" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                                <path fill="none" d="M 10 308.5 L 1214 308.5" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                            </g>
+                            <g class="highcharts-grid" zIndex="1"/>
+                            <g class="highcharts-grid" zIndex="1">
+                                <path fill="none" d="M 281.5 331 L 281.5 371" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                                <path fill="none" d="M 472.5 331 L 472.5 371" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                                <path fill="none" d="M 669.5 331 L 669.5 371" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                                <path fill="none" d="M 866.5 331 L 866.5 371" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                                <path fill="none" d="M 1067.5 331 L 1067.5 371" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                                <path fill="none" d="M 84.5 331 L 84.5 371" stroke="#C0C0C0" stroke-width="1"
+                                      zIndex="1"/>
+                            </g>
+                            <g class="highcharts-grid" zIndex="1"/>
+                            <g class="highcharts-axis" zIndex="2">
+                                <path fill="none" d="M 89.5 308 L 89.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 170.5 308 L 170.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 250.5 308 L 250.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 330.5 308 L 330.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 410.5 308 L 410.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 491.5 308 L 491.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 571.5 308 L 571.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 651.5 308 L 651.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 731.5 308 L 731.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 812.5 308 L 812.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 892.5 308 L 892.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 972.5 308 L 972.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 1052.5 308 L 1052.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 1133.5 308 L 1133.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 1213.5 308 L 1213.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 9.5 308 L 9.5 313" stroke="#C0D0E0" stroke-width="1"/>
+                                <path fill="none" d="M 10 308.5 L 1214 308.5" stroke="#C0D0E0" stroke-width="1"
+                                      zIndex="7" visibility="visible"/>
+                            </g>
+                            <g class="highcharts-axis" zIndex="2"/>
+                            <g class="highcharts-axis" zIndex="2"/>
+                            <g class="highcharts-axis" zIndex="2"/>
+                            <g class="highcharts-axis" zIndex="2"/>
+                            <g class="highcharts-series-group" zIndex="3">
+                                <g class="highcharts-series" visibility="visible" zIndex="0.1"
+                                   transform="translate(10,45)" clip-path="url(#highcharts-5)">
+                                    <path fill="none"
+                                          d="M -40.13333333333333 263 C -40.13333333333333 263 -16.053333333333335 263 0 263 C 16.053333333333335 263 24.080000000000002 263 40.13333333333333 263 C 56.18666666666667 263 64.21333333333334 263 80.26666666666667 263 C 96.32000000000001 263 104.34666666666666 263 120.39999999999999 263 C 136.45333333333332 263 144.48 263 160.53333333333333 263 C 176.58666666666667 263 184.61333333333332 263 200.66666666666666 263 C 216.71999999999997 263 224.74666666666667 263 240.79999999999998 263 C 256.85333333333335 263 264.88 263 280.93333333333334 263 C 296.9866666666667 263 305.0133333333333 263 321.06666666666666 263 C 337.12 263 345.14666666666665 263 361.2 263 C 377.2533333333333 263 385.28000000000003 263 401.3333333333333 263 C 417.38666666666666 263 425.4133333333333 263 441.46666666666664 263 C 457.52 263 465.5466666666666 263 481.59999999999997 263 C 497.6533333333333 263 505.68 263 521.7333333333333 263 C 537.7866666666666 263 545.8133333333333 263 561.8666666666667 263 C 577.92 263 585.9466666666667 263 602 263 C 618.0533333333333 263 626.08 263 642.1333333333333 263 C 658.1866666666667 263 666.2133333333334 263 682.2666666666667 263 C 698.3199999999999 263 706.3466666666666 263 722.4 263 C 738.4533333333333 263 746.4799999999999 263 762.5333333333333 263 C 778.5866666666667 263 786.6133333333333 263 802.6666666666666 263 C 818.72 263 826.7466666666666 263 842.8 263 C 858.8533333333332 263 866.8799999999999 263 882.9333333333333 263 C 898.9866666666665 263 907.0133333333333 263 923.0666666666666 263 C 939.1199999999999 263 947.1466666666668 263 963.1999999999999 263 C 979.2533333333333 263 987.28 263 1003.3333333333334 263 C 1019.3866666666667 263 1027.4133333333334 263 1043.4666666666667 263 C 1059.52 263 1067.5466666666666 263 1083.6 263 C 1099.6533333333332 263 1107.6799999999998 263 1123.7333333333333 263 C 1139.7866666666664 263 1147.813333333333 263 1163.8666666666666 263 C 1179.9199999999998 263 1204 263 1204 263"
+                                          stroke="#89A54E" stroke-width="2" zIndex="1"/>
+                                </g>
+                                <g class="highcharts-markers" visibility="visible" zIndex="0.1"
+                                   transform="translate(10,45)" clip-path="none"/>
+                                <g class="highcharts-series" visibility="visible" zIndex="0.1"
+                                   transform="translate(10,45)" clip-path="url(#highcharts-5)">
+                                    <path fill="none"
+                                          d="M -40.13333333333333 263 C -40.13333333333333 263 -16.053333333333335 263 0 263 C 16.053333333333335 263 24.080000000000002 263 40.13333333333333 263 C 56.18666666666667 263 64.21333333333334 263 80.26666666666667 263 C 96.32000000000001 263 104.34666666666666 263 120.39999999999999 263 C 136.45333333333332 263 144.48 263 160.53333333333333 263 C 176.58666666666667 263 184.61333333333332 263 200.66666666666666 263 C 216.71999999999997 263 224.74666666666667 263 240.79999999999998 263 C 256.85333333333335 263 264.88 263 280.93333333333334 263 C 296.9866666666667 263 305.0133333333333 263 321.06666666666666 263 C 337.12 263 345.14666666666665 263 361.2 263 C 377.2533333333333 263 385.28000000000003 263 401.3333333333333 263 C 417.38666666666666 263 425.4133333333333 263 441.46666666666664 263 C 457.52 263 465.5466666666666 263 481.59999999999997 263 C 497.6533333333333 263 505.68 263 521.7333333333333 263 C 537.7866666666666 263 545.8133333333333 263 561.8666666666667 263 C 577.92 263 585.9466666666667 263 602 263 C 618.0533333333333 263 626.08 263 642.1333333333333 263 C 658.1866666666667 263 666.2133333333334 263 682.2666666666667 263 C 698.3199999999999 263 706.3466666666666 263 722.4 263 C 738.4533333333333 263 746.4799999999999 263 762.5333333333333 263 C 778.5866666666667 263 786.6133333333333 263 802.6666666666666 263 C 818.72 263 826.7466666666666 263 842.8 263 C 858.8533333333332 263 866.8799999999999 263 882.9333333333333 263 C 898.9866666666665 263 907.0133333333333 263 923.0666666666666 263 C 939.1199999999999 263 947.1466666666668 263 963.1999999999999 263 C 979.2533333333333 263 987.28 263 1003.3333333333334 263 C 1019.3866666666667 263 1027.4133333333334 263 1043.4666666666667 263 C 1059.52 263 1067.5466666666666 263 1083.6 263 C 1099.6533333333332 263 1107.6799999999998 263 1123.7333333333333 263 C 1139.7866666666664 263 1147.813333333333 263 1163.8666666666666 263 C 1179.9199999999998 263 1204 263 1204 263"
+                                          stroke="#AA4643" stroke-width="2" zIndex="1"/>
+                                </g>
+                                <g class="highcharts-markers" visibility="visible" zIndex="0.1"
+                                   transform="translate(10,45)" clip-path="none"/>
+                                <g class="highcharts-series" visibility="visible" zIndex="0.1"
+                                   transform="translate(10,45)" clip-path="url(#highcharts-5)">
+                                    <path fill="none"
+                                          d="M -40.13333333333333 263 C -40.13333333333333 263 -16.053333333333335 263 0 263 C 16.053333333333335 263 24.080000000000002 263 40.13333333333333 263 C 56.18666666666667 263 64.21333333333334 263 80.26666666666667 263 C 96.32000000000001 263 104.34666666666666 263 120.39999999999999 263 C 136.45333333333332 263 144.48 263 160.53333333333333 263 C 176.58666666666667 263 184.61333333333332 263 200.66666666666666 263 C 216.71999999999997 263 224.74666666666667 263 240.79999999999998 263 C 256.85333333333335 263 264.88 263 280.93333333333334 263 C 296.9866666666667 263 305.0133333333333 263 321.06666666666666 263 C 337.12 263 345.14666666666665 263 361.2 263 C 377.2533333333333 263 385.28000000000003 263 401.3333333333333 263 C 417.38666666666666 263 425.4133333333333 263 441.46666666666664 263 C 457.52 263 465.5466666666666 263 481.59999999999997 263 C 497.6533333333333 263 505.68 263 521.7333333333333 263 C 537.7866666666666 263 545.8133333333333 263 561.8666666666667 263 C 577.92 263 585.9466666666667 263 602 263 C 618.0533333333333 263 626.08 263 642.1333333333333 263 C 658.1866666666667 263 666.2133333333334 263 682.2666666666667 263 C 698.3199999999999 263 706.3466666666666 263 722.4 263 C 738.4533333333333 263 746.4799999999999 263 762.5333333333333 263 C 778.5866666666667 263 786.6133333333333 263 802.6666666666666 263 C 818.72 263 826.7466666666666 263 842.8 263 C 858.8533333333332 263 866.8799999999999 263 882.9333333333333 263 C 898.9866666666665 263 907.0133333333333 263 923.0666666666666 263 C 939.1199999999999 263 947.1466666666668 263 963.1999999999999 263 C 979.2533333333333 263 987.28 263 1003.3333333333334 263 C 1019.3866666666667 263 1027.4133333333334 263 1043.4666666666667 263 C 1059.52 263 1067.5466666666666 263 1083.6 263 C 1099.6533333333332 263 1107.6799999999998 263 1123.7333333333333 263 C 1139.7866666666664 263 1147.813333333333 263 1163.8666666666666 263 C 1179.9199999999998 263 1204 263 1204 263"
+                                          stroke="#4572A7" stroke-width="2" zIndex="1"/>
+                                </g>
+                                <g class="highcharts-markers" visibility="visible" zIndex="0.1"
+                                   transform="translate(10,45)" clip-path="none"/>
+                                <g class="highcharts-series" visibility="visible" zIndex="0.1"
+                                   transform="translate(24,331)" clip-path="url(#highcharts-6)">
+                                    <path fill="rgb(69,114,167)"
+                                          d="M 0 20 C 0 20 1.9384615384615387 20 3.230769230769231 20 C 4.523076923076923 20 5.1692307692307695 20 6.461538461538462 20 C 7.753846153846155 20 8.4 20 9.692307692307693 20 C 10.984615384615385 20 11.630769230769232 20 12.923076923076923 20 C 14.215384615384616 20 14.861538461538462 20 16.153846153846153 20 C 17.446153846153845 20 18.092307692307692 20 19.384615384615387 20 C 20.676923076923078 20 21.323076923076925 20 22.615384615384617 20 C 23.907692307692308 20 24.553846153846155 20 25.846153846153847 20 C 27.13846153846154 20 27.784615384615382 20 29.076923076923077 20 C 30.369230769230768 20 31.015384615384612 20 32.30769230769231 20 C 33.6 20 34.246153846153845 20 35.53846153846154 20 C 36.830769230769235 20 37.476923076923086 20 38.769230769230774 20 C 40.06153846153846 20 40.70769230769231 20 42 20 C 43.29230769230769 20 43.93846153846154 20 45.23076923076923 20 C 46.52307692307693 20 47.16923076923077 20 48.46153846153846 20 C 49.753846153846155 20 50.4 20 51.69230769230769 20 C 52.984615384615395 20 53.63076923076924 20 54.92307692307693 20 C 56.21538461538462 20 56.861538461538466 20 58.15384615384615 20 C 59.44615384615385 20 60.09230769230769 20 61.38461538461539 20 C 62.676923076923075 20 63.323076923076925 20 64.61538461538461 20 C 65.90769230769232 20 66.55384615384615 20 67.84615384615385 20 C 69.13846153846154 20 69.78461538461538 20 71.07692307692308 20 C 72.36923076923077 20 73.01538461538462 20 74.3076923076923 20 C 75.6 20 76.24615384615386 20 77.53846153846155 20 C 78.83076923076923 20 79.47692307692309 20 80.76923076923077 20 C 82.06153846153846 20 82.70769230769231 20 84 20 C 85.29230769230769 20 85.93846153846154 20 87.23076923076923 20 C 88.52307692307693 20 89.16923076923078 20 90.46153846153847 20 C 91.75384615384617 20 92.4 20 93.6923076923077 20 C 94.98461538461538 20 95.63076923076923 20 96.92307692307692 20 C 98.21538461538462 20 98.86153846153846 20 100.15384615384616 20 C 101.44615384615385 20 102.0923076923077 20 103.38461538461539 20 C 104.67692307692309 20 105.32307692307691 20 106.61538461538461 20 C 107.90769230769232 20 108.55384615384614 20 109.84615384615385 20 C 111.13846153846154 20 111.78461538461538 20 113.07692307692308 20 C 114.36923076923077 20 115.01538461538462 20 116.3076923076923 20 C 117.6 20 118.24615384615386 20 119.53846153846155 20 C 120.83076923076923 20 121.4769230769231 20 122.76923076923077 20 C 124.06153846153848 20 124.70769230769231 20 126 20 C 127.29230769230769 20 127.93846153846152 20 129.23076923076923 20 C 130.5230769230769 20 131.16923076923075 20 132.46153846153845 20 C 133.75384615384615 20 134.4 20 135.6923076923077 20 C 136.98461538461538 20 137.63076923076923 20 138.92307692307693 20 C 140.2153846153846 20 140.8615384615385 20 142.15384615384616 20 C 143.44615384615386 20 144.0923076923077 20 145.3846153846154 20 C 146.6769230769231 20 147.3230769230769 20 148.6153846153846 20 C 149.9076923076923 20 150.55384615384614 20 151.84615384615384 20 C 153.13846153846154 20 153.7846153846154 20 155.0769230769231 20 C 156.3692307692308 20 157.01538461538462 20 158.30769230769232 20 C 159.6 20 160.24615384615385 20 161.53846153846155 20 C 162.83076923076925 20 163.4769230769231 20 164.76923076923077 20 C 166.06153846153848 20 166.7076923076923 20 168 20 C 169.2923076923077 20 169.93846153846152 20 171.23076923076923 20 C 172.5230769230769 20 173.16923076923075 20 174.46153846153845 20 C 175.75384615384615 20 176.4 20 177.6923076923077 20 C 178.98461538461538 20 179.63076923076923 20 180.92307692307693 20 C 182.2153846153846 20 182.8615384615385 20 184.15384615384616 20 C 185.44615384615386 20 186.0923076923077 20 187.3846153846154 20 C 188.6769230769231 20 189.3230769230769 20 190.6153846153846 20 C 191.9076923076923 20 192.55384615384614 20 193.84615384615384 20 C 195.13846153846154 20 195.7846153846154 20 197.0769230769231 20 C 198.3692307692308 20 199.01538461538462 20 200.30769230769232 20 C 201.6 20 202.24615384615385 20 203.53846153846155 20 C 204.83076923076925 20 205.4769230769231 20 206.76923076923077 20 C 208.06153846153848 20 208.7076923076923 20 210 20 C 211.2923076923077 20 211.93846153846152 20 213.23076923076923 20 C 214.5230769230769 20 215.16923076923075 20 216.46153846153848 20 C 217.75384615384618 20 218.4 20 219.6923076923077 20 C 220.98461538461538 20 221.63076923076923 20 222.92307692307693 20 C 224.2153846153846 20 224.8615384615385 20 226.15384615384616 20 C 227.44615384615386 20 228.0923076923077 20 229.3846153846154 20 C 230.6769230769231 20 231.3230769230769 20 232.6153846153846 20 C 233.9076923076923 20 234.55384615384614 20 235.84615384615384 20 C 237.1384615384615 20 237.7846153846154 20 239.0769230769231 20 C 240.36923076923077 20 241.01538461538462 20 242.30769230769232 20 C 243.6 20 244.24615384615385 20 245.53846153846155 20 C 246.83076923076925 20 247.4769230769231 20 248.76923076923077 20 C 250.06153846153848 20 250.7076923076923 20 252 20 C 253.2923076923077 20 253.93846153846152 20 255.23076923076923 20 C 256.5230769230769 20 257.16923076923075 20 258.46153846153845 20 C 259.75384615384615 20 260.4 20 261.6923076923077 20 C 262.9846153846154 20 263.63076923076926 20 264.9230769230769 20 C 266.2153846153846 20 266.8615384615385 20 268.1538461538462 20 C 269.4461538461539 20 270.0923076923077 20 271.3846153846154 20 C 272.6769230769231 20 273.32307692307694 20 274.61538461538464 20 C 275.90769230769234 20 276.55384615384617 20 277.84615384615387 20 C 279.13846153846157 20 279.78461538461545 20 281.0769230769231 20 C 282.36923076923074 20 283.0153846153846 20 284.3076923076923 20 C 285.6 20 286.24615384615385 20 287.53846153846155 20 C 288.83076923076925 20 289.4769230769231 20 290.7692307692308 20 C 292.0615384615385 20 292.7076923076923 20 294 20 C 295.2923076923077 20 295.9384615384615 20 297.2307692307692 20 C 298.5230769230769 20 299.16923076923075 20 300.46153846153845 20 C 301.75384615384615 20 302.4 20 303.6923076923077 20 C 304.9846153846154 20 305.63076923076926 20 306.9230769230769 20 C 308.2153846153846 20 308.8615384615385 20 310.1538461538462 20 C 311.4461538461539 20 312.0923076923077 20 313.3846153846154 20 C 314.6769230769231 20 315.32307692307694 20 316.61538461538464 20 C 317.90769230769234 20 318.55384615384617 20 319.84615384615387 20 C 321.13846153846157 20 321.78461538461545 20 323.0769230769231 20 C 324.36923076923074 20 325.0153846153846 20 326.3076923076923 20 C 327.6 20 328.24615384615385 20 329.53846153846155 20 C 330.83076923076925 20 331.4769230769231 20 332.7692307692308 20 C 334.0615384615385 20 334.7076923076923 20 336 20 C 337.2923076923077 20 337.9384615384615 20 339.2307692307692 20 C 340.5230769230769 20 341.16923076923075 20 342.46153846153845 20 C 343.7538461538461 20 344.4 20 345.6923076923077 20 C 346.9846153846154 20 347.63076923076926 20 348.9230769230769 20 C 350.2153846153846 20 350.8615384615385 20 352.1538461538462 20 C 353.4461538461539 20 354.0923076923077 20 355.3846153846154 20 C 356.6769230769231 20 357.32307692307694 20 358.61538461538464 20 C 359.9076923076923 20 360.55384615384617 20 361.84615384615387 20 C 363.13846153846157 20 363.78461538461545 20 365.0769230769231 20 C 366.36923076923074 20 367.0153846153846 20 368.3076923076923 20 C 369.6 20 370.2461538461539 20 371.53846153846155 20 C 372.83076923076925 20 373.4769230769231 20 374.7692307692308 20 C 376.0615384615385 20 376.7076923076923 20 378 20 C 379.2923076923077 20 379.9384615384615 20 381.2307692307692 20 C 382.5230769230769 20 383.16923076923075 20 384.46153846153845 20 C 385.7538461538461 20 386.4 20 387.6923076923077 20 C 388.98461538461544 20 389.63076923076926 20 390.92307692307696 20 C 392.21538461538466 20 392.8615384615385 20 394.1538461538462 20 C 395.4461538461539 20 396.0923076923077 20 397.3846153846154 20 C 398.6769230769231 20 399.32307692307694 20 400.61538461538464 20 C 401.9076923076923 20 402.55384615384617 20 403.84615384615387 20 C 405.13846153846157 20 405.78461538461545 20 407.0769230769231 20 C 408.36923076923074 20 409.0153846153846 20 410.3076923076923 20 C 411.6 20 412.2461538461539 20 413.53846153846155 20 C 414.83076923076925 20 415.4769230769231 20 416.7692307692308 20 C 418.0615384615385 20 418.7076923076923 20 420 20 C 421.2923076923077 20 421.9384615384615 20 423.2307692307692 20 C 424.5230769230769 20 425.16923076923075 20 426.46153846153845 20 C 427.7538461538461 20 428.4 20 429.6923076923077 20 C 430.98461538461544 20 431.63076923076926 20 432.92307692307696 20 C 434.21538461538466 20 434.8615384615385 20 436.1538461538462 20 C 437.4461538461539 20 438.0923076923077 20 439.3846153846154 20 C 440.67692307692306 20 441.32307692307694 20 442.61538461538464 20 C 443.9076923076923 20 444.55384615384617 20 445.84615384615387 20 C 447.1384615384615 20 447.78461538461545 20 449.0769230769231 20 C 450.36923076923074 20 451.01538461538456 20 452.3076923076923 20 C 453.6 20 454.2461538461539 20 455.53846153846155 20 C 456.83076923076925 20 457.4769230769231 20 458.7692307692308 20 C 460.0615384615385 20 460.7076923076923 20 462 20 C 463.2923076923077 20 463.9384615384615 20 465.2307692307692 20 C 466.5230769230769 20 467.16923076923075 20 468.46153846153845 20 C 469.7538461538461 20 470.4 20 471.6923076923077 20 C 472.98461538461544 20 473.63076923076926 20 474.92307692307696 20 C 476.21538461538466 20 476.8615384615385 20 478.1538461538462 20 C 479.4461538461539 20 480.0923076923077 20 481.3846153846154 20 C 482.67692307692306 20 483.32307692307694 20 484.61538461538464 20 C 485.9076923076923 20 486.55384615384617 20 487.84615384615387 20 C 489.1384615384615 20 489.78461538461545 20 491.0769230769231 20 C 492.36923076923074 20 493.01538461538456 20 494.3076923076923 20 C 495.6 20 496.2461538461539 20 497.53846153846155 20 C 498.83076923076925 20 499.4769230769231 20 500.7692307692308 20 C 502.0615384615385 20 502.7076923076923 20 504 20 C 505.2923076923077 20 505.9384615384615 20 507.2307692307692 20 C 508.5230769230769 20 509.16923076923075 20 510.46153846153845 20 C 511.7538461538461 20 512.4 20 513.6923076923077 20 C 514.9846153846154 20 515.6307692307693 20 516.9230769230769 20 C 518.2153846153846 20 518.8615384615384 20 520.1538461538462 20 C 521.446153846154 20 522.0923076923077 20 523.3846153846154 20 C 524.676923076923 20 525.323076923077 20 526.6153846153846 20 C 527.9076923076923 20 528.553846153846 20 529.8461538461538 20 C 531.1384615384616 20 531.7846153846154 20 533.0769230769231 20 C 534.3692307692309 20 535.0153846153846 20 536.3076923076924 20 C 537.6 20 538.2461538461539 20 539.5384615384615 20 C 540.8307692307693 20 541.4769230769231 20 542.7692307692308 20 C 544.0615384615385 20 544.7076923076924 20 546 20 C 547.2923076923078 20 547.9384615384615 20 549.2307692307693 20 C 550.5230769230769 20 551.1692307692308 20 552.4615384615385 20 C 553.7538461538461 20 554.4 20 555.6923076923077 20 C 556.9846153846154 20 557.6307692307693 20 558.9230769230769 20 C 560.2153846153846 20 560.8615384615384 20 562.1538461538462 20 C 563.446153846154 20 564.0923076923077 20 565.3846153846154 20 C 566.676923076923 20 567.323076923077 20 568.6153846153846 20 C 569.9076923076923 20 570.553846153846 20 571.8461538461538 20 C 573.1384615384616 20 573.7846153846154 20 575.0769230769231 20 C 576.3692307692309 20 577.0153846153846 20 578.3076923076924 20 C 579.6 20 580.2461538461539 20 581.5384615384615 20 C 582.8307692307693 20 583.4769230769231 20 584.7692307692308 20 C 586.0615384615385 20 586.7076923076924 20 588 20 C 589.2923076923078 20 589.9384615384615 20 591.2307692307693 20 C 592.5230769230769 20 593.1692307692308 20 594.4615384615385 20 C 595.7538461538461 20 596.4 20 597.6923076923077 20 C 598.9846153846154 20 599.6307692307693 20 600.9230769230769 20 C 602.2153846153846 20 602.8615384615384 20 604.1538461538462 20 C 605.446153846154 20 606.0923076923077 20 607.3846153846154 20 C 608.676923076923 20 609.323076923077 20 610.6153846153846 20 C 611.9076923076923 20 612.553846153846 20 613.8461538461538 20 C 615.1384615384616 20 615.7846153846154 20 617.0769230769231 20 C 618.3692307692309 20 619.0153846153846 20 620.3076923076924 20 C 621.6 20 622.2461538461539 20 623.5384615384615 20 C 624.8307692307693 20 625.4769230769231 20 626.7692307692308 20 C 628.0615384615385 20 628.7076923076924 20 630 20 C 631.2923076923078 20 631.9384615384615 20 633.2307692307693 20 C 634.5230769230769 20 635.1692307692308 20 636.4615384615385 20 C 637.7538461538461 20 638.4 20 639.6923076923077 20 C 640.9846153846154 20 641.6307692307693 20 642.9230769230769 20 C 644.2153846153846 20 644.8615384615384 20 646.1538461538462 20 C 647.446153846154 20 648.0923076923077 20 649.3846153846154 20 C 650.676923076923 20 651.323076923077 20 652.6153846153846 20 C 653.9076923076923 20 654.553846153846 20 655.8461538461538 20 C 657.1384615384616 20 657.7846153846154 20 659.0769230769231 20 C 660.3692307692309 20 661.0153846153846 20 662.3076923076924 20 C 663.6 20 664.2461538461539 20 665.5384615384615 20 C 666.8307692307693 20 667.4769230769231 20 668.7692307692308 20 C 670.0615384615385 20 670.7076923076924 20 672 20 C 673.2923076923078 20 673.9384615384615 20 675.2307692307693 20 C 676.5230769230769 20 677.1692307692308 20 678.4615384615385 20 C 679.7538461538461 20 680.4 20 681.6923076923077 20 C 682.9846153846154 20 683.6307692307691 20 684.9230769230769 20 C 686.2153846153846 20 686.8615384615384 20 688.1538461538462 20 C 689.446153846154 20 690.0923076923077 20 691.3846153846154 20 C 692.676923076923 20 693.323076923077 20 694.6153846153846 20 C 695.9076923076923 20 696.553846153846 20 697.8461538461538 20 C 699.1384615384616 20 699.7846153846154 20 701.0769230769231 20 C 702.3692307692309 20 703.0153846153846 20 704.3076923076924 20 C 705.6 20 706.2461538461539 20 707.5384615384615 20 C 708.8307692307693 20 709.4769230769231 20 710.7692307692308 20 C 712.0615384615385 20 712.7076923076924 20 714 20 C 715.2923076923078 20 715.9384615384615 20 717.2307692307693 20 C 718.5230769230769 20 719.1692307692308 20 720.4615384615385 20 C 721.7538461538461 20 722.4 20 723.6923076923077 20 C 724.9846153846154 20 725.6307692307691 20 726.9230769230769 20 C 728.2153846153846 20 728.8615384615384 20 730.1538461538462 20 C 731.446153846154 20 732.0923076923077 20 733.3846153846154 20 C 734.676923076923 20 735.323076923077 20 736.6153846153846 20 C 737.9076923076923 20 738.553846153846 20 739.8461538461538 20 C 741.1384615384616 20 741.7846153846154 20 743.0769230769231 20 C 744.3692307692309 20 745.0153846153846 20 746.3076923076924 20 C 747.6 20 748.2461538461539 20 749.5384615384615 20 C 750.8307692307693 20 751.4769230769231 20 752.7692307692308 20 C 754.0615384615385 20 754.7076923076924 20 756 20 C 757.2923076923078 20 757.9384615384615 20 759.2307692307693 20 C 760.5230769230769 20 761.1692307692308 20 762.4615384615385 20 C 763.7538461538461 20 764.4 20 765.6923076923077 20 C 766.9846153846154 20 767.6307692307691 20 768.9230769230769 20 C 770.2153846153846 20 770.8615384615384 20 772.1538461538462 20 C 773.446153846154 20 774.0923076923077 20 775.3846153846154 20 C 776.676923076923 20 777.323076923077 20 778.6153846153846 20 C 779.9076923076924 20 780.5538461538463 20 781.8461538461539 20 C 783.1384615384616 20 783.7846153846154 20 785.0769230769231 20 C 786.3692307692309 20 787.0153846153846 20 788.3076923076924 20 C 789.6 20 790.2461538461539 20 791.5384615384615 20 C 792.8307692307693 20 793.4769230769231 20 794.7692307692308 20 C 796.0615384615385 20 796.7076923076924 20 798 20 C 799.2923076923078 20 799.9384615384615 20 801.2307692307693 20 C 802.5230769230769 20 803.1692307692308 20 804.4615384615385 20 C 805.7538461538461 20 806.4 20 807.6923076923077 20 C 808.9846153846154 20 809.6307692307691 20 810.9230769230769 20 C 812.2153846153846 20 812.8615384615384 20 814.1538461538462 20 C 815.446153846154 20 816.0923076923077 20 817.3846153846154 20 C 818.676923076923 20 819.323076923077 20 820.6153846153846 20 C 821.9076923076924 20 822.5538461538463 20 823.8461538461539 20 C 825.1384615384617 20 825.7846153846154 20 827.0769230769231 20 C 828.3692307692309 20 829.0153846153847 20 830.3076923076924 20 C 831.6 20 832.2461538461539 20 833.5384615384615 20 C 834.8307692307693 20 835.4769230769231 20 836.7692307692308 20 C 838.0615384615385 20 838.7076923076924 20 840 20 C 841.2923076923078 20 841.9384615384615 20 843.2307692307693 20 C 844.5230769230769 20 845.1692307692308 20 846.4615384615385 20 C 847.7538461538461 20 848.4 20 849.6923076923077 20 C 850.9846153846154 20 851.6307692307691 20 852.9230769230769 20 C 854.2153846153846 20 854.8615384615384 20 856.1538461538462 20 C 857.446153846154 20 858.0923076923078 20 859.3846153846154 20 C 860.676923076923 20 861.323076923077 20 862.6153846153846 20 C 863.9076923076924 20 864.5538461538463 20 865.8461538461539 20 C 867.1384615384617 20 867.7846153846154 20 869.0769230769231 20 C 870.3692307692309 20 871.0153846153847 20 872.3076923076924 20 C 873.6 20 874.2461538461539 20 875.5384615384615 20 C 876.8307692307693 20 877.4769230769231 20 878.7692307692308 20 C 880.0615384615385 20 880.7076923076924 20 882 20 C 883.2923076923078 20 883.9384615384615 20 885.2307692307693 20 C 886.5230769230769 20 887.1692307692308 20 888.4615384615385 20 C 889.7538461538461 20 890.4 20 891.6923076923077 20 C 892.9846153846154 20 893.6307692307691 20 894.9230769230769 20 C 896.2153846153846 20 896.8615384615384 20 898.1538461538462 20 C 899.446153846154 20 900.0923076923078 20 901.3846153846154 20 C 902.676923076923 20 903.323076923077 20 904.6153846153846 20 C 905.9076923076924 20 906.5538461538463 20 907.8461538461539 20 C 909.1384615384617 20 909.7846153846154 20 911.0769230769231 20 C 912.3692307692309 20 913.0153846153847 20 914.3076923076924 20 C 915.6 20 916.2461538461539 20 917.5384615384615 20 C 918.8307692307693 20 919.4769230769231 20 920.7692307692308 20 C 922.0615384615385 20 922.7076923076924 20 924 20 C 925.2923076923078 20 925.9384615384615 20 927.2307692307693 20 C 928.5230769230769 20 929.1692307692308 20 930.4615384615385 20 C 931.7538461538461 20 932.4 20 933.6923076923077 20 C 934.9846153846154 20 935.6307692307691 20 936.9230769230769 20 C 938.2153846153846 20 938.8615384615384 20 940.1538461538462 20 C 941.446153846154 20 942.0923076923078 20 943.3846153846154 20 C 944.676923076923 20 945.323076923077 20 946.6153846153846 20 C 947.9076923076924 20 948.5538461538463 20 949.8461538461539 20 C 951.1384615384617 20 951.7846153846154 20 953.0769230769231 20 C 954.3692307692309 20 955.0153846153847 20 956.3076923076924 20 C 957.6 20 958.2461538461539 20 959.5384615384615 20 C 960.8307692307693 20 961.4769230769231 20 962.7692307692308 20 C 964.0615384615385 20 964.7076923076924 20 966 20 C 967.2923076923078 20 967.9384615384615 20 969.2307692307693 20 C 970.5230769230769 20 971.1692307692308 20 972.4615384615385 20 C 973.7538461538461 20 974.4 20 975.6923076923077 20 C 976.9846153846154 20 977.6307692307691 20 978.9230769230769 20 C 980.2153846153846 20 980.8615384615384 20 982.1538461538462 20 C 983.446153846154 20 984.0923076923078 20 985.3846153846154 20 C 986.676923076923 20 987.323076923077 20 988.6153846153846 20 C 989.9076923076924 20 990.5538461538463 20 991.8461538461539 20 C 993.1384615384617 20 993.7846153846154 20 995.0769230769231 20 C 996.3692307692309 20 997.0153846153847 20 998.3076923076924 20 C 999.6 20 1000.2461538461539 20 1001.5384615384615 20 C 1002.8307692307693 20 1003.4769230769231 20 1004.7692307692308 20 C 1006.0615384615385 20 1006.7076923076924 20 1008 20 C 1009.2923076923078 20 1009.9384615384615 20 1011.2307692307693 20 C 1012.5230769230769 20 1013.1692307692308 20 1014.4615384615385 20 C 1015.7538461538461 20 1016.4 20 1017.6923076923077 20 C 1018.9846153846154 20 1019.6307692307691 20 1020.9230769230769 20 C 1022.2153846153846 20 1022.8615384615384 20 1024.1538461538462 20 C 1025.446153846154 20 1026.0923076923077 20 1027.3846153846155 20 C 1028.6769230769232 20 1029.323076923077 20 1030.6153846153848 20 C 1031.9076923076923 20 1032.553846153846 20 1033.8461538461538 20 C 1035.1384615384616 20 1035.7846153846153 20 1037.076923076923 20 C 1038.3692307692309 20 1039.0153846153848 20 1040.3076923076924 20 C 1041.6 20 1042.246153846154 20 1043.5384615384617 20 C 1044.8307692307692 20 1045.476923076923 20 1046.7692307692307 20 C 1048.0615384615385 20 1048.7076923076922 20 1050 20 C 1051.2923076923078 20 1051.9384615384615 20 1053.2307692307693 20 C 1054.523076923077 20 1055.1692307692308 20 1056.4615384615386 20 C 1057.753846153846 20 1058.4 20 1059.6923076923076 20 C 1060.9846153846152 20 1061.6307692307691 20 1062.923076923077 20 C 1064.2153846153847 20 1064.8615384615384 20 1066.1538461538462 20 C 1067.446153846154 20 1068.0923076923077 20 1069.3846153846155 20 C 1070.6769230769232 20 1071.323076923077 20 1072.6153846153848 20 C 1073.9076923076923 20 1074.553846153846 20 1075.8461538461538 20 C 1077.1384615384616 20 1077.7846153846153 20 1079.076923076923 20 C 1080.3692307692309 20 1081.0153846153848 20 1082.3076923076924 20 C 1083.6 20 1084.246153846154 20 1085.5384615384617 20 C 1086.8307692307692 20 1087.476923076923 20 1088.7692307692307 20 C 1090.0615384615385 20 1090.7076923076922 20 1092 20 C 1093.2923076923078 20 1093.9384615384615 20 1095.2307692307693 20 C 1096.523076923077 20 1097.1692307692308 20 1098.4615384615386 20 C 1099.753846153846 20 1100.4 20 1101.6923076923076 20 C 1102.9846153846152 20 1103.6307692307691 20 1104.923076923077 20 C 1106.2153846153847 20 1106.8615384615384 20 1108.1538461538462 20 C 1109.446153846154 20 1110.0923076923077 20 1111.3846153846155 20 C 1112.6769230769232 20 1113.323076923077 20 1114.6153846153848 20 C 1115.9076923076923 20 1116.553846153846 20 1117.8461538461538 20 C 1119.1384615384616 20 1119.7846153846153 20 1121.076923076923 20 C 1122.3692307692309 20 1123.0153846153848 20 1124.3076923076924 20 C 1125.6 20 1126.246153846154 20 1127.5384615384617 20 C 1128.8307692307692 20 1129.476923076923 20 1130.7692307692307 20 C 1132.0615384615385 20 1132.7076923076922 20 1134 20 C 1135.2923076923078 20 1135.9384615384615 20 1137.2307692307693 20 C 1138.523076923077 20 1139.1692307692308 20 1140.4615384615386 20 C 1141.753846153846 20 1142.4 20 1143.6923076923076 20 C 1144.9846153846152 20 1145.6307692307691 20 1146.923076923077 20 C 1148.2153846153847 20 1148.8615384615384 20 1150.1538461538462 20 C 1151.446153846154 20 1152.0923076923077 20 1153.3846153846155 20 C 1154.6769230769232 20 1155.323076923077 20 1156.6153846153848 20 C 1157.9076923076923 20 1158.553846153846 20 1159.8461538461538 20 C 1161.1384615384616 20 1161.7846153846153 20 1163.076923076923 20 C 1164.3692307692309 20 1165.0153846153848 20 1166.3076923076924 20 C 1167.6 20 1168.246153846154 20 1169.5384615384617 20 C 1170.8307692307692 20 1171.476923076923 20 1172.7692307692307 20 C 1174.0615384615385 20 1176 20 1176 20 L 1176 40 L 0 40"
+                                          fill-opacity="0.4" zIndex="0"/>
+                                    <path fill="none"
+                                          d="M 0 20 C 0 20 1.9384615384615387 20 3.230769230769231 20 C 4.523076923076923 20 5.1692307692307695 20 6.461538461538462 20 C 7.753846153846155 20 8.4 20 9.692307692307693 20 C 10.984615384615385 20 11.630769230769232 20 12.923076923076923 20 C 14.215384615384616 20 14.861538461538462 20 16.153846153846153 20 C 17.446153846153845 20 18.092307692307692 20 19.384615384615387 20 C 20.676923076923078 20 21.323076923076925 20 22.615384615384617 20 C 23.907692307692308 20 24.553846153846155 20 25.846153846153847 20 C 27.13846153846154 20 27.784615384615382 20 29.076923076923077 20 C 30.369230769230768 20 31.015384615384612 20 32.30769230769231 20 C 33.6 20 34.246153846153845 20 35.53846153846154 20 C 36.830769230769235 20 37.476923076923086 20 38.769230769230774 20 C 40.06153846153846 20 40.70769230769231 20 42 20 C 43.29230769230769 20 43.93846153846154 20 45.23076923076923 20 C 46.52307692307693 20 47.16923076923077 20 48.46153846153846 20 C 49.753846153846155 20 50.4 20 51.69230769230769 20 C 52.984615384615395 20 53.63076923076924 20 54.92307692307693 20 C 56.21538461538462 20 56.861538461538466 20 58.15384615384615 20 C 59.44615384615385 20 60.09230769230769 20 61.38461538461539 20 C 62.676923076923075 20 63.323076923076925 20 64.61538461538461 20 C 65.90769230769232 20 66.55384615384615 20 67.84615384615385 20 C 69.13846153846154 20 69.78461538461538 20 71.07692307692308 20 C 72.36923076923077 20 73.01538461538462 20 74.3076923076923 20 C 75.6 20 76.24615384615386 20 77.53846153846155 20 C 78.83076923076923 20 79.47692307692309 20 80.76923076923077 20 C 82.06153846153846 20 82.70769230769231 20 84 20 C 85.29230769230769 20 85.93846153846154 20 87.23076923076923 20 C 88.52307692307693 20 89.16923076923078 20 90.46153846153847 20 C 91.75384615384617 20 92.4 20 93.6923076923077 20 C 94.98461538461538 20 95.63076923076923 20 96.92307692307692 20 C 98.21538461538462 20 98.86153846153846 20 100.15384615384616 20 C 101.44615384615385 20 102.0923076923077 20 103.38461538461539 20 C 104.67692307692309 20 105.32307692307691 20 106.61538461538461 20 C 107.90769230769232 20 108.55384615384614 20 109.84615384615385 20 C 111.13846153846154 20 111.78461538461538 20 113.07692307692308 20 C 114.36923076923077 20 115.01538461538462 20 116.3076923076923 20 C 117.6 20 118.24615384615386 20 119.53846153846155 20 C 120.83076923076923 20 121.4769230769231 20 122.76923076923077 20 C 124.06153846153848 20 124.70769230769231 20 126 20 C 127.29230769230769 20 127.93846153846152 20 129.23076923076923 20 C 130.5230769230769 20 131.16923076923075 20 132.46153846153845 20 C 133.75384615384615 20 134.4 20 135.6923076923077 20 C 136.98461538461538 20 137.63076923076923 20 138.92307692307693 20 C 140.2153846153846 20 140.8615384615385 20 142.15384615384616 20 C 143.44615384615386 20 144.0923076923077 20 145.3846153846154 20 C 146.6769230769231 20 147.3230769230769 20 148.6153846153846 20 C 149.9076923076923 20 150.55384615384614 20 151.84615384615384 20 C 153.13846153846154 20 153.7846153846154 20 155.0769230769231 20 C 156.3692307692308 20 157.01538461538462 20 158.30769230769232 20 C 159.6 20 160.24615384615385 20 161.53846153846155 20 C 162.83076923076925 20 163.4769230769231 20 164.76923076923077 20 C 166.06153846153848 20 166.7076923076923 20 168 20 C 169.2923076923077 20 169.93846153846152 20 171.23076923076923 20 C 172.5230769230769 20 173.16923076923075 20 174.46153846153845 20 C 175.75384615384615 20 176.4 20 177.6923076923077 20 C 178.98461538461538 20 179.63076923076923 20 180.92307692307693 20 C 182.2153846153846 20 182.8615384615385 20 184.15384615384616 20 C 185.44615384615386 20 186.0923076923077 20 187.3846153846154 20 C 188.6769230769231 20 189.3230769230769 20 190.6153846153846 20 C 191.9076923076923 20 192.55384615384614 20 193.84615384615384 20 C 195.13846153846154 20 195.7846153846154 20 197.0769230769231 20 C 198.3692307692308 20 199.01538461538462 20 200.30769230769232 20 C 201.6 20 202.24615384615385 20 203.53846153846155 20 C 204.83076923076925 20 205.4769230769231 20 206.76923076923077 20 C 208.06153846153848 20 208.7076923076923 20 210 20 C 211.2923076923077 20 211.93846153846152 20 213.23076923076923 20 C 214.5230769230769 20 215.16923076923075 20 216.46153846153848 20 C 217.75384615384618 20 218.4 20 219.6923076923077 20 C 220.98461538461538 20 221.63076923076923 20 222.92307692307693 20 C 224.2153846153846 20 224.8615384615385 20 226.15384615384616 20 C 227.44615384615386 20 228.0923076923077 20 229.3846153846154 20 C 230.6769230769231 20 231.3230769230769 20 232.6153846153846 20 C 233.9076923076923 20 234.55384615384614 20 235.84615384615384 20 C 237.1384615384615 20 237.7846153846154 20 239.0769230769231 20 C 240.36923076923077 20 241.01538461538462 20 242.30769230769232 20 C 243.6 20 244.24615384615385 20 245.53846153846155 20 C 246.83076923076925 20 247.4769230769231 20 248.76923076923077 20 C 250.06153846153848 20 250.7076923076923 20 252 20 C 253.2923076923077 20 253.93846153846152 20 255.23076923076923 20 C 256.5230769230769 20 257.16923076923075 20 258.46153846153845 20 C 259.75384615384615 20 260.4 20 261.6923076923077 20 C 262.9846153846154 20 263.63076923076926 20 264.9230769230769 20 C 266.2153846153846 20 266.8615384615385 20 268.1538461538462 20 C 269.4461538461539 20 270.0923076923077 20 271.3846153846154 20 C 272.6769230769231 20 273.32307692307694 20 274.61538461538464 20 C 275.90769230769234 20 276.55384615384617 20 277.84615384615387 20 C 279.13846153846157 20 279.78461538461545 20 281.0769230769231 20 C 282.36923076923074 20 283.0153846153846 20 284.3076923076923 20 C 285.6 20 286.24615384615385 20 287.53846153846155 20 C 288.83076923076925 20 289.4769230769231 20 290.7692307692308 20 C 292.0615384615385 20 292.7076923076923 20 294 20 C 295.2923076923077 20 295.9384615384615 20 297.2307692307692 20 C 298.5230769230769 20 299.16923076923075 20 300.46153846153845 20 C 301.75384615384615 20 302.4 20 303.6923076923077 20 C 304.9846153846154 20 305.63076923076926 20 306.9230769230769 20 C 308.2153846153846 20 308.8615384615385 20 310.1538461538462 20 C 311.4461538461539 20 312.0923076923077 20 313.3846153846154 20 C 314.6769230769231 20 315.32307692307694 20 316.61538461538464 20 C 317.90769230769234 20 318.55384615384617 20 319.84615384615387 20 C 321.13846153846157 20 321.78461538461545 20 323.0769230769231 20 C 324.36923076923074 20 325.0153846153846 20 326.3076923076923 20 C 327.6 20 328.24615384615385 20 329.53846153846155 20 C 330.83076923076925 20 331.4769230769231 20 332.7692307692308 20 C 334.0615384615385 20 334.7076923076923 20 336 20 C 337.2923076923077 20 337.9384615384615 20 339.2307692307692 20 C 340.5230769230769 20 341.16923076923075 20 342.46153846153845 20 C 343.7538461538461 20 344.4 20 345.6923076923077 20 C 346.9846153846154 20 347.63076923076926 20 348.9230769230769 20 C 350.2153846153846 20 350.8615384615385 20 352.1538461538462 20 C 353.4461538461539 20 354.0923076923077 20 355.3846153846154 20 C 356.6769230769231 20 357.32307692307694 20 358.61538461538464 20 C 359.9076923076923 20 360.55384615384617 20 361.84615384615387 20 C 363.13846153846157 20 363.78461538461545 20 365.0769230769231 20 C 366.36923076923074 20 367.0153846153846 20 368.3076923076923 20 C 369.6 20 370.2461538461539 20 371.53846153846155 20 C 372.83076923076925 20 373.4769230769231 20 374.7692307692308 20 C 376.0615384615385 20 376.7076923076923 20 378 20 C 379.2923076923077 20 379.9384615384615 20 381.2307692307692 20 C 382.5230769230769 20 383.16923076923075 20 384.46153846153845 20 C 385.7538461538461 20 386.4 20 387.6923076923077 20 C 388.98461538461544 20 389.63076923076926 20 390.92307692307696 20 C 392.21538461538466 20 392.8615384615385 20 394.1538461538462 20 C 395.4461538461539 20 396.0923076923077 20 397.3846153846154 20 C 398.6769230769231 20 399.32307692307694 20 400.61538461538464 20 C 401.9076923076923 20 402.55384615384617 20 403.84615384615387 20 C 405.13846153846157 20 405.78461538461545 20 407.0769230769231 20 C 408.36923076923074 20 409.0153846153846 20 410.3076923076923 20 C 411.6 20 412.2461538461539 20 413.53846153846155 20 C 414.83076923076925 20 415.4769230769231 20 416.7692307692308 20 C 418.0615384615385 20 418.7076923076923 20 420 20 C 421.2923076923077 20 421.9384615384615 20 423.2307692307692 20 C 424.5230769230769 20 425.16923076923075 20 426.46153846153845 20 C 427.7538461538461 20 428.4 20 429.6923076923077 20 C 430.98461538461544 20 431.63076923076926 20 432.92307692307696 20 C 434.21538461538466 20 434.8615384615385 20 436.1538461538462 20 C 437.4461538461539 20 438.0923076923077 20 439.3846153846154 20 C 440.67692307692306 20 441.32307692307694 20 442.61538461538464 20 C 443.9076923076923 20 444.55384615384617 20 445.84615384615387 20 C 447.1384615384615 20 447.78461538461545 20 449.0769230769231 20 C 450.36923076923074 20 451.01538461538456 20 452.3076923076923 20 C 453.6 20 454.2461538461539 20 455.53846153846155 20 C 456.83076923076925 20 457.4769230769231 20 458.7692307692308 20 C 460.0615384615385 20 460.7076923076923 20 462 20 C 463.2923076923077 20 463.9384615384615 20 465.2307692307692 20 C 466.5230769230769 20 467.16923076923075 20 468.46153846153845 20 C 469.7538461538461 20 470.4 20 471.6923076923077 20 C 472.98461538461544 20 473.63076923076926 20 474.92307692307696 20 C 476.21538461538466 20 476.8615384615385 20 478.1538461538462 20 C 479.4461538461539 20 480.0923076923077 20 481.3846153846154 20 C 482.67692307692306 20 483.32307692307694 20 484.61538461538464 20 C 485.9076923076923 20 486.55384615384617 20 487.84615384615387 20 C 489.1384615384615 20 489.78461538461545 20 491.0769230769231 20 C 492.36923076923074 20 493.01538461538456 20 494.3076923076923 20 C 495.6 20 496.2461538461539 20 497.53846153846155 20 C 498.83076923076925 20 499.4769230769231 20 500.7692307692308 20 C 502.0615384615385 20 502.7076923076923 20 504 20 C 505.2923076923077 20 505.9384615384615 20 507.2307692307692 20 C 508.5230769230769 20 509.16923076923075 20 510.46153846153845 20 C 511.7538461538461 20 512.4 20 513.6923076923077 20 C 514.9846153846154 20 515.6307692307693 20 516.9230769230769 20 C 518.2153846153846 20 518.8615384615384 20 520.1538461538462 20 C 521.446153846154 20 522.0923076923077 20 523.3846153846154 20 C 524.676923076923 20 525.323076923077 20 526.6153846153846 20 C 527.9076923076923 20 528.553846153846 20 529.8461538461538 20 C 531.1384615384616 20 531.7846153846154 20 533.0769230769231 20 C 534.3692307692309 20 535.0153846153846 20 536.3076923076924 20 C 537.6 20 538.2461538461539 20 539.5384615384615 20 C 540.8307692307693 20 541.4769230769231 20 542.7692307692308 20 C 544.0615384615385 20 544.7076923076924 20 546 20 C 547.2923076923078 20 547.9384615384615 20 549.2307692307693 20 C 550.5230769230769 20 551.1692307692308 20 552.4615384615385 20 C 553.7538461538461 20 554.4 20 555.6923076923077 20 C 556.9846153846154 20 557.6307692307693 20 558.9230769230769 20 C 560.2153846153846 20 560.8615384615384 20 562.1538461538462 20 C 563.446153846154 20 564.0923076923077 20 565.3846153846154 20 C 566.676923076923 20 567.323076923077 20 568.6153846153846 20 C 569.9076923076923 20 570.553846153846 20 571.8461538461538 20 C 573.1384615384616 20 573.7846153846154 20 575.0769230769231 20 C 576.3692307692309 20 577.0153846153846 20 578.3076923076924 20 C 579.6 20 580.2461538461539 20 581.5384615384615 20 C 582.8307692307693 20 583.4769230769231 20 584.7692307692308 20 C 586.0615384615385 20 586.7076923076924 20 588 20 C 589.2923076923078 20 589.9384615384615 20 591.2307692307693 20 C 592.5230769230769 20 593.1692307692308 20 594.4615384615385 20 C 595.7538461538461 20 596.4 20 597.6923076923077 20 C 598.9846153846154 20 599.6307692307693 20 600.9230769230769 20 C 602.2153846153846 20 602.8615384615384 20 604.1538461538462 20 C 605.446153846154 20 606.0923076923077 20 607.3846153846154 20 C 608.676923076923 20 609.323076923077 20 610.6153846153846 20 C 611.9076923076923 20 612.553846153846 20 613.8461538461538 20 C 615.1384615384616 20 615.7846153846154 20 617.0769230769231 20 C 618.3692307692309 20 619.0153846153846 20 620.3076923076924 20 C 621.6 20 622.2461538461539 20 623.5384615384615 20 C 624.8307692307693 20 625.4769230769231 20 626.7692307692308 20 C 628.0615384615385 20 628.7076923076924 20 630 20 C 631.2923076923078 20 631.9384615384615 20 633.2307692307693 20 C 634.5230769230769 20 635.1692307692308 20 636.4615384615385 20 C 637.7538461538461 20 638.4 20 639.6923076923077 20 C 640.9846153846154 20 641.6307692307693 20 642.9230769230769 20 C 644.2153846153846 20 644.8615384615384 20 646.1538461538462 20 C 647.446153846154 20 648.0923076923077 20 649.3846153846154 20 C 650.676923076923 20 651.323076923077 20 652.6153846153846 20 C 653.9076923076923 20 654.553846153846 20 655.8461538461538 20 C 657.1384615384616 20 657.7846153846154 20 659.0769230769231 20 C 660.3692307692309 20 661.0153846153846 20 662.3076923076924 20 C 663.6 20 664.2461538461539 20 665.5384615384615 20 C 666.8307692307693 20 667.4769230769231 20 668.7692307692308 20 C 670.0615384615385 20 670.7076923076924 20 672 20 C 673.2923076923078 20 673.9384615384615 20 675.2307692307693 20 C 676.5230769230769 20 677.1692307692308 20 678.4615384615385 20 C 679.7538461538461 20 680.4 20 681.6923076923077 20 C 682.9846153846154 20 683.6307692307691 20 684.9230769230769 20 C 686.2153846153846 20 686.8615384615384 20 688.1538461538462 20 C 689.446153846154 20 690.0923076923077 20 691.3846153846154 20 C 692.676923076923 20 693.323076923077 20 694.6153846153846 20 C 695.9076923076923 20 696.553846153846 20 697.8461538461538 20 C 699.1384615384616 20 699.7846153846154 20 701.0769230769231 20 C 702.3692307692309 20 703.0153846153846 20 704.3076923076924 20 C 705.6 20 706.2461538461539 20 707.5384615384615 20 C 708.8307692307693 20 709.4769230769231 20 710.7692307692308 20 C 712.0615384615385 20 712.7076923076924 20 714 20 C 715.2923076923078 20 715.9384615384615 20 717.2307692307693 20 C 718.5230769230769 20 719.1692307692308 20 720.4615384615385 20 C 721.7538461538461 20 722.4 20 723.6923076923077 20 C 724.9846153846154 20 725.6307692307691 20 726.9230769230769 20 C 728.2153846153846 20 728.8615384615384 20 730.1538461538462 20 C 731.446153846154 20 732.0923076923077 20 733.3846153846154 20 C 734.676923076923 20 735.323076923077 20 736.6153846153846 20 C 737.9076923076923 20 738.553846153846 20 739.8461538461538 20 C 741.1384615384616 20 741.7846153846154 20 743.0769230769231 20 C 744.3692307692309 20 745.0153846153846 20 746.3076923076924 20 C 747.6 20 748.2461538461539 20 749.5384615384615 20 C 750.8307692307693 20 751.4769230769231 20 752.7692307692308 20 C 754.0615384615385 20 754.7076923076924 20 756 20 C 757.2923076923078 20 757.9384615384615 20 759.2307692307693 20 C 760.5230769230769 20 761.1692307692308 20 762.4615384615385 20 C 763.7538461538461 20 764.4 20 765.6923076923077 20 C 766.9846153846154 20 767.6307692307691 20 768.9230769230769 20 C 770.2153846153846 20 770.8615384615384 20 772.1538461538462 20 C 773.446153846154 20 774.0923076923077 20 775.3846153846154 20 C 776.676923076923 20 777.323076923077 20 778.6153846153846 20 C 779.9076923076924 20 780.5538461538463 20 781.8461538461539 20 C 783.1384615384616 20 783.7846153846154 20 785.0769230769231 20 C 786.3692307692309 20 787.0153846153846 20 788.3076923076924 20 C 789.6 20 790.2461538461539 20 791.5384615384615 20 C 792.8307692307693 20 793.4769230769231 20 794.7692307692308 20 C 796.0615384615385 20 796.7076923076924 20 798 20 C 799.2923076923078 20 799.9384615384615 20 801.2307692307693 20 C 802.5230769230769 20 803.1692307692308 20 804.4615384615385 20 C 805.7538461538461 20 806.4 20 807.6923076923077 20 C 808.9846153846154 20 809.6307692307691 20 810.9230769230769 20 C 812.2153846153846 20 812.8615384615384 20 814.1538461538462 20 C 815.446153846154 20 816.0923076923077 20 817.3846153846154 20 C 818.676923076923 20 819.323076923077 20 820.6153846153846 20 C 821.9076923076924 20 822.5538461538463 20 823.8461538461539 20 C 825.1384615384617 20 825.7846153846154 20 827.0769230769231 20 C 828.3692307692309 20 829.0153846153847 20 830.3076923076924 20 C 831.6 20 832.2461538461539 20 833.5384615384615 20 C 834.8307692307693 20 835.4769230769231 20 836.7692307692308 20 C 838.0615384615385 20 838.7076923076924 20 840 20 C 841.2923076923078 20 841.9384615384615 20 843.2307692307693 20 C 844.5230769230769 20 845.1692307692308 20 846.4615384615385 20 C 847.7538461538461 20 848.4 20 849.6923076923077 20 C 850.9846153846154 20 851.6307692307691 20 852.9230769230769 20 C 854.2153846153846 20 854.8615384615384 20 856.1538461538462 20 C 857.446153846154 20 858.0923076923078 20 859.3846153846154 20 C 860.676923076923 20 861.323076923077 20 862.6153846153846 20 C 863.9076923076924 20 864.5538461538463 20 865.8461538461539 20 C 867.1384615384617 20 867.7846153846154 20 869.0769230769231 20 C 870.3692307692309 20 871.0153846153847 20 872.3076923076924 20 C 873.6 20 874.2461538461539 20 875.5384615384615 20 C 876.8307692307693 20 877.4769230769231 20 878.7692307692308 20 C 880.0615384615385 20 880.7076923076924 20 882 20 C 883.2923076923078 20 883.9384615384615 20 885.2307692307693 20 C 886.5230769230769 20 887.1692307692308 20 888.4615384615385 20 C 889.7538461538461 20 890.4 20 891.6923076923077 20 C 892.9846153846154 20 893.6307692307691 20 894.9230769230769 20 C 896.2153846153846 20 896.8615384615384 20 898.1538461538462 20 C 899.446153846154 20 900.0923076923078 20 901.3846153846154 20 C 902.676923076923 20 903.323076923077 20 904.6153846153846 20 C 905.9076923076924 20 906.5538461538463 20 907.8461538461539 20 C 909.1384615384617 20 909.7846153846154 20 911.0769230769231 20 C 912.3692307692309 20 913.0153846153847 20 914.3076923076924 20 C 915.6 20 916.2461538461539 20 917.5384615384615 20 C 918.8307692307693 20 919.4769230769231 20 920.7692307692308 20 C 922.0615384615385 20 922.7076923076924 20 924 20 C 925.2923076923078 20 925.9384615384615 20 927.2307692307693 20 C 928.5230769230769 20 929.1692307692308 20 930.4615384615385 20 C 931.7538461538461 20 932.4 20 933.6923076923077 20 C 934.9846153846154 20 935.6307692307691 20 936.9230769230769 20 C 938.2153846153846 20 938.8615384615384 20 940.1538461538462 20 C 941.446153846154 20 942.0923076923078 20 943.3846153846154 20 C 944.676923076923 20 945.323076923077 20 946.6153846153846 20 C 947.9076923076924 20 948.5538461538463 20 949.8461538461539 20 C 951.1384615384617 20 951.7846153846154 20 953.0769230769231 20 C 954.3692307692309 20 955.0153846153847 20 956.3076923076924 20 C 957.6 20 958.2461538461539 20 959.5384615384615 20 C 960.8307692307693 20 961.4769230769231 20 962.7692307692308 20 C 964.0615384615385 20 964.7076923076924 20 966 20 C 967.2923076923078 20 967.9384615384615 20 969.2307692307693 20 C 970.5230769230769 20 971.1692307692308 20 972.4615384615385 20 C 973.7538461538461 20 974.4 20 975.6923076923077 20 C 976.9846153846154 20 977.6307692307691 20 978.9230769230769 20 C 980.2153846153846 20 980.8615384615384 20 982.1538461538462 20 C 983.446153846154 20 984.0923076923078 20 985.3846153846154 20 C 986.676923076923 20 987.323076923077 20 988.6153846153846 20 C 989.9076923076924 20 990.5538461538463 20 991.8461538461539 20 C 993.1384615384617 20 993.7846153846154 20 995.0769230769231 20 C 996.3692307692309 20 997.0153846153847 20 998.3076923076924 20 C 999.6 20 1000.2461538461539 20 1001.5384615384615 20 C 1002.8307692307693 20 1003.4769230769231 20 1004.7692307692308 20 C 1006.0615384615385 20 1006.7076923076924 20 1008 20 C 1009.2923076923078 20 1009.9384615384615 20 1011.2307692307693 20 C 1012.5230769230769 20 1013.1692307692308 20 1014.4615384615385 20 C 1015.7538461538461 20 1016.4 20 1017.6923076923077 20 C 1018.9846153846154 20 1019.6307692307691 20 1020.9230769230769 20 C 1022.2153846153846 20 1022.8615384615384 20 1024.1538461538462 20 C 1025.446153846154 20 1026.0923076923077 20 1027.3846153846155 20 C 1028.6769230769232 20 1029.323076923077 20 1030.6153846153848 20 C 1031.9076923076923 20 1032.553846153846 20 1033.8461538461538 20 C 1035.1384615384616 20 1035.7846153846153 20 1037.076923076923 20 C 1038.3692307692309 20 1039.0153846153848 20 1040.3076923076924 20 C 1041.6 20 1042.246153846154 20 1043.5384615384617 20 C 1044.8307692307692 20 1045.476923076923 20 1046.7692307692307 20 C 1048.0615384615385 20 1048.7076923076922 20 1050 20 C 1051.2923076923078 20 1051.9384615384615 20 1053.2307692307693 20 C 1054.523076923077 20 1055.1692307692308 20 1056.4615384615386 20 C 1057.753846153846 20 1058.4 20 1059.6923076923076 20 C 1060.9846153846152 20 1061.6307692307691 20 1062.923076923077 20 C 1064.2153846153847 20 1064.8615384615384 20 1066.1538461538462 20 C 1067.446153846154 20 1068.0923076923077 20 1069.3846153846155 20 C 1070.6769230769232 20 1071.323076923077 20 1072.6153846153848 20 C 1073.9076923076923 20 1074.553846153846 20 1075.8461538461538 20 C 1077.1384615384616 20 1077.7846153846153 20 1079.076923076923 20 C 1080.3692307692309 20 1081.0153846153848 20 1082.3076923076924 20 C 1083.6 20 1084.246153846154 20 1085.5384615384617 20 C 1086.8307692307692 20 1087.476923076923 20 1088.7692307692307 20 C 1090.0615384615385 20 1090.7076923076922 20 1092 20 C 1093.2923076923078 20 1093.9384615384615 20 1095.2307692307693 20 C 1096.523076923077 20 1097.1692307692308 20 1098.4615384615386 20 C 1099.753846153846 20 1100.4 20 1101.6923076923076 20 C 1102.9846153846152 20 1103.6307692307691 20 1104.923076923077 20 C 1106.2153846153847 20 1106.8615384615384 20 1108.1538461538462 20 C 1109.446153846154 20 1110.0923076923077 20 1111.3846153846155 20 C 1112.6769230769232 20 1113.323076923077 20 1114.6153846153848 20 C 1115.9076923076923 20 1116.553846153846 20 1117.8461538461538 20 C 1119.1384615384616 20 1119.7846153846153 20 1121.076923076923 20 C 1122.3692307692309 20 1123.0153846153848 20 1124.3076923076924 20 C 1125.6 20 1126.246153846154 20 1127.5384615384617 20 C 1128.8307692307692 20 1129.476923076923 20 1130.7692307692307 20 C 1132.0615384615385 20 1132.7076923076922 20 1134 20 C 1135.2923076923078 20 1135.9384615384615 20 1137.2307692307693 20 C 1138.523076923077 20 1139.1692307692308 20 1140.4615384615386 20 C 1141.753846153846 20 1142.4 20 1143.6923076923076 20 C 1144.9846153846152 20 1145.6307692307691 20 1146.923076923077 20 C 1148.2153846153847 20 1148.8615384615384 20 1150.1538461538462 20 C 1151.446153846154 20 1152.0923076923077 20 1153.3846153846155 20 C 1154.6769230769232 20 1155.323076923077 20 1156.6153846153848 20 C 1157.9076923076923 20 1158.553846153846 20 1159.8461538461538 20 C 1161.1384615384616 20 1161.7846153846153 20 1163.076923076923 20 C 1164.3692307692309 20 1165.0153846153848 20 1166.3076923076924 20 C 1167.6 20 1168.246153846154 20 1169.5384615384617 20 C 1170.8307692307692 20 1171.476923076923 20 1172.7692307692307 20 C 1174.0615384615385 20 1176 20 1176 20"
+                                          stroke="#4572A7" stroke-width="1" zIndex="1"/>
+                                </g>
+                                <g class="highcharts-markers" visibility="visible" zIndex="0.1"
+                                   transform="translate(24,331)" clip-path="url(#highcharts-7)"/>
+                            </g>
+                            <rect fill="rgb(255,255,255)" x="24" y="331" width="1079" height="40" stroke-width="0"
+                                  fill-opacity="0.75" zIndex="3"/>
+                            <rect fill="rgb(255,255,255)" x="1200" y="331" width="0" height="40" stroke-width="0"
+                                  fill-opacity="0.75" zIndex="3"/>
+                            <path fill="none" stroke-width="1" stroke="#444" zIndex="3"
+                                  d="M 10 331.5 L 1103.5 331.5 1103.5 371.5 M 1199.5 371.5 L 1199.5 331.5 1214 331.5"/>
+                            <g style="cursor:e-resize;" zIndex="3" transform="translate(1200,343)">
+                                <rect rx="3" ry="3" fill="#FFF" x="-4.5" y="0.5" width="8" height="15" stroke-width="1"
+                                      stroke="#666"/>
+                                <path fill="#FFF" d="M -1.5 4 L -1.5 12 M 0.5 4 L 0.5 12" stroke="#666"
+                                      stroke-width="1"/>
+                            </g>
+                            <g style="cursor:e-resize;" zIndex="4" transform="translate(1103,343)">
+                                <rect rx="3" ry="3" fill="#FFF" x="-4.5" y="0.5" width="8" height="15" stroke-width="1"
+                                      stroke="#666"/>
+                                <path fill="#FFF" d="M -1.5 4 L -1.5 12 M 0.5 4 L 0.5 12" stroke="#666"
+                                      stroke-width="1"/>
+                            </g>
+                            <g class="highcharts-legend" zIndex="7" transform="translate(50,50)">
+                                <rect rx="5" ry="5" fill="none" x="0.5" y="0.5" width="85" height="47" stroke-width="5"
+                                      stroke="black" isShadow="true" stroke-opacity="0.049999999999999996"
+                                      transform="translate(1, 1)" visibility="visible"/>
+                                <rect rx="5" ry="5" fill="none" x="0.5" y="0.5" width="85" height="47" stroke-width="3"
+                                      stroke="black" isShadow="true" stroke-opacity="0.09999999999999999"
+                                      transform="translate(1, 1)" visibility="visible"/>
+                                <rect rx="5" ry="5" fill="none" x="0.5" y="0.5" width="85" height="47" stroke-width="1"
+                                      stroke="black" isShadow="true" stroke-opacity="0.15" transform="translate(1, 1)"
+                                      visibility="visible"/>
+                                <rect rx="5" ry="5" fill="#FFFFFF" x="0.5" y="0.5" width="85" height="47"
+                                      stroke-width="1" stroke="#909090" visibility="visible"/>
+                                <g zIndex="1" clip-path="url(#highcharts-4)">
+                                    <g>
+                                        <g class="highcharts-legend-item" zIndex="1" transform="translate(8,3)">
+                                            <path fill="none" d="M 0 11 L 16 11" stroke-width="2" stroke="#89A54E"/>
+                                            <text x="21" y="15"
+                                                  style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;cursor:pointer;color:#3E576F;fill:#3E576F;"
+                                                  text-anchor="start" zIndex="2">
+                                                <tspan x="21">通过用例</tspan>
+                                            </text>
+                                        </g>
+                                        <g class="highcharts-legend-item" zIndex="1" transform="translate(8,15.5)">
+                                            <path fill="none" d="M 0 11 L 16 11" stroke-width="2" stroke="#AA4643"/>
+                                            <text x="21" y="15"
+                                                  style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;cursor:pointer;color:#3E576F;fill:#3E576F;"
+                                                  text-anchor="start" zIndex="2">
+                                                <tspan x="21">失败用例</tspan>
+                                            </text>
+                                        </g>
+                                        <g class="highcharts-legend-item" zIndex="1" transform="translate(8,28)">
+                                            <path fill="none" d="M 0 11 L 16 11" stroke-width="2" stroke="#4572A7"/>
+                                            <text x="21" y="15"
+                                                  style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;cursor:pointer;color:#3E576F;fill:#3E576F;"
+                                                  text-anchor="start" zIndex="2">
+                                                <tspan x="21">全部用例</tspan>
+                                            </text>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                            <g class="highcharts-axis-labels" zIndex="7">
+                                <text x="30.399999618530273" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="30.399999618530273">12. Sep</tspan>
+                                </text>
+                                <text x="90.26666666666667" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="90.26666666666667">14. Sep</tspan>
+                                </text>
+                                <text x="170.53333333333333" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="170.53333333333333">16. Sep</tspan>
+                                </text>
+                                <text x="250.79999999999998" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="250.79999999999998">18. Sep</tspan>
+                                </text>
+                                <text x="331.06666666666666" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="331.06666666666666">20. Sep</tspan>
+                                </text>
+                                <text x="411.3333333333333" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="411.3333333333333">22. Sep</tspan>
+                                </text>
+                                <text x="491.59999999999997" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="491.59999999999997">24. Sep</tspan>
+                                </text>
+                                <text x="571.8666666666667" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="571.8666666666667">26. Sep</tspan>
+                                </text>
+                                <text x="652.1333333333333" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="652.1333333333333">28. Sep</tspan>
+                                </text>
+                                <text x="732.4" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="732.4">30. Sep</tspan>
+                                </text>
+                                <text x="812.6666666666666" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="812.6666666666666">2. Oct</tspan>
+                                </text>
+                                <text x="892.9333333333333" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="892.9333333333333">4. Oct</tspan>
+                                </text>
+                                <text x="973.1999999999999" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="973.1999999999999">6. Oct</tspan>
+                                </text>
+                                <text x="1053.4666666666667" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="1053.4666666666667">8. Oct</tspan>
+                                </text>
+                                <text x="1133.7333333333333" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="1133.7333333333333">10. Oct</tspan>
+                                </text>
+                                <text x="1193.9416675567627" y="322"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="middle" visibility="visible">
+                                    <tspan x="1193.9416675567627">12. Oct</tspan>
+                                </text>
+                            </g>
+                            <g class="highcharts-axis-labels" zIndex="7">
+                                <text x="12" y="306"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:582px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="12">0</tspan>
+                                </text>
+                                <text x="12" y="253.39999999999998"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:582px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="12">0.01</tspan>
+                                </text>
+                                <text x="12" y="200.8"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:582px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="12">0.02</tspan>
+                                </text>
+                                <text x="12" y="148.20000000000002"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:582px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="12">0.03</tspan>
+                                </text>
+                                <text x="12" y="95.6"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:582px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="12">0.04</tspan>
+                                </text>
+                                <text x="0" y="0"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:582px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="hidden">
+                                    <tspan x="0">0.05</tspan>
+                                </text>
+                            </g>
+                            <g class="highcharts-axis-labels" zIndex="7"/>
+                            <g class="highcharts-axis-labels" zIndex="7">
+                                <text x="88.38461538461539" y="367"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="88.38461538461539">Nov '14</tspan>
+                                </text>
+                                <text x="285.46153846153845" y="367"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="285.46153846153845">Jan '15</tspan>
+                                </text>
+                                <text x="476.0769230769231" y="367"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="476.0769230769231">Mar '15</tspan>
+                                </text>
+                                <text x="673.1538461538462" y="367"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="673.1538461538462">May '15</tspan>
+                                </text>
+                                <text x="870.2307692307693" y="367"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="870.2307692307693">Jul '15</tspan>
+                                </text>
+                                <text x="1070.5384615384617" y="367"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                      text-anchor="start" visibility="visible">
+                                    <tspan x="1070.5384615384617">Sep '15</tspan>
+                                </text>
+                            </g>
+                            <g class="highcharts-axis-labels" zIndex="7"/>
+                            <g zIndex="7" style="cursor:default;text-align:center;" transform="translate(49,20)">
+                                <rect rx="0" ry="0" fill="url(#highcharts-12)" x="0.5" y="0.5" width="30" height="18"
+                                      stroke-width="1" stroke="#68A"/>
+                                <text x="5.108333587646484" y="14"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:black;fill:black;"
+                                      zIndex="1">
+                                    <tspan x="5.108333587646484">1m</tspan>
+                                </text>
+                            </g>
+                            <g zIndex="7" style="cursor:default;text-align:center;" transform="translate(79,20)">
+                                <rect rx="0" ry="0" fill="url(#highcharts-13)" x="0.5" y="0.5" width="30" height="18"
+                                      stroke-width="1" stroke="#999"/>
+                                <text x="5.108333587646484" y="14"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:black;fill:black;"
+                                      zIndex="1">
+                                    <tspan x="5.108333587646484">3m</tspan>
+                                </text>
+                            </g>
+                            <g zIndex="7" style="cursor:default;text-align:center;" transform="translate(109,20)">
+                                <rect rx="0" ry="0" fill="url(#highcharts-14)" x="0.5" y="0.5" width="30" height="18"
+                                      stroke-width="1" stroke="#999"/>
+                                <text x="5.108333587646484" y="14"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:black;fill:black;"
+                                      zIndex="1">
+                                    <tspan x="5.108333587646484">6m</tspan>
+                                </text>
+                            </g>
+                            <g zIndex="7" style="cursor:default;text-align:center;" transform="translate(139,20)">
+                                <rect rx="0" ry="0" fill="url(#highcharts-15)" x="0.5" y="0.5" width="30" height="18"
+                                      stroke-width="1" stroke="#999"/>
+                                <text x="2.4833335876464844" y="14"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:black;fill:black;"
+                                      zIndex="1">
+                                    <tspan x="2.4833335876464844">YTD</tspan>
+                                </text>
+                            </g>
+                            <g zIndex="7" style="cursor:default;text-align:center;" transform="translate(169,20)">
+                                <rect rx="0" ry="0" fill="url(#highcharts-16)" x="0.5" y="0.5" width="30" height="18"
+                                      stroke-width="1" stroke="#999"/>
+                                <text x="7.574999809265137" y="14"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:black;fill:black;"
+                                      zIndex="1">
+                                    <tspan x="7.574999809265137">1y</tspan>
+                                </text>
+                            </g>
+                            <g zIndex="7" style="cursor:default;text-align:center;" transform="translate(199,20)">
+                                <rect rx="0" ry="0" fill="url(#highcharts-17)" x="0.5" y="0.5" width="30" height="18"
+                                      stroke-width="1" stroke="#999"/>
+                                <text x="6.899999618530273" y="14"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:black;fill:black;"
+                                      zIndex="1">
+                                    <tspan x="6.899999618530273">All</tspan>
+                                </text>
+                            </g>
+                            <g class="highcharts-tooltip" zIndex="8" style="padding:0;white-space:nowrap;"
+                               visibility="hidden">
+                                <rect rx="5" ry="5" fill="none" x="0" y="0" width="10" height="10" stroke-width="5"
+                                      fill-opacity="0.85" isShadow="true" stroke="black"
+                                      stroke-opacity="0.049999999999999996" transform="translate(1, 1)"/>
+                                <rect rx="5" ry="5" fill="none" x="0" y="0" width="10" height="10" stroke-width="3"
+                                      fill-opacity="0.85" isShadow="true" stroke="black"
+                                      stroke-opacity="0.09999999999999999" transform="translate(1, 1)"/>
+                                <rect rx="5" ry="5" fill="none" x="0" y="0" width="10" height="10" stroke-width="1"
+                                      fill-opacity="0.85" isShadow="true" stroke="black" stroke-opacity="0.15"
+                                      transform="translate(1, 1)"/>
+                                <rect rx="5" ry="5" fill="rgb(255,255,255)" x="0" y="0" width="10" height="10"
+                                      stroke-width="2" fill-opacity="0.85"/>
+                                <text x="5" y="18"
+                                      style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#333333;fill:#333333;"
+                                      zIndex="1"/>
+                            </g>
+                            <g class="highcharts-tracker" zIndex="9">
+                                <g visibility="visible" zIndex="1" transform="translate(10,45)">
+                                    <path fill="none"
+                                          d="M -50.13333333333333 263 L -40.13333333333333 263 C -40.13333333333333 263 -16.053333333333335 263 0 263 C 16.053333333333335 263 24.080000000000002 263 40.13333333333333 263 C 56.18666666666667 263 64.21333333333334 263 80.26666666666667 263 C 96.32000000000001 263 104.34666666666666 263 120.39999999999999 263 C 136.45333333333332 263 144.48 263 160.53333333333333 263 C 176.58666666666667 263 184.61333333333332 263 200.66666666666666 263 C 216.71999999999997 263 224.74666666666667 263 240.79999999999998 263 C 256.85333333333335 263 264.88 263 280.93333333333334 263 C 296.9866666666667 263 305.0133333333333 263 321.06666666666666 263 C 337.12 263 345.14666666666665 263 361.2 263 C 377.2533333333333 263 385.28000000000003 263 401.3333333333333 263 C 417.38666666666666 263 425.4133333333333 263 441.46666666666664 263 C 457.52 263 465.5466666666666 263 481.59999999999997 263 C 497.6533333333333 263 505.68 263 521.7333333333333 263 C 537.7866666666666 263 545.8133333333333 263 561.8666666666667 263 C 577.92 263 585.9466666666667 263 602 263 C 618.0533333333333 263 626.08 263 642.1333333333333 263 C 658.1866666666667 263 666.2133333333334 263 682.2666666666667 263 C 698.3199999999999 263 706.3466666666666 263 722.4 263 C 738.4533333333333 263 746.4799999999999 263 762.5333333333333 263 C 778.5866666666667 263 786.6133333333333 263 802.6666666666666 263 C 818.72 263 826.7466666666666 263 842.8 263 C 858.8533333333332 263 866.8799999999999 263 882.9333333333333 263 C 898.9866666666665 263 907.0133333333333 263 923.0666666666666 263 C 939.1199999999999 263 947.1466666666668 263 963.1999999999999 263 C 979.2533333333333 263 987.28 263 1003.3333333333334 263 C 1019.3866666666667 263 1027.4133333333334 263 1043.4666666666667 263 C 1059.52 263 1067.5466666666666 263 1083.6 263 C 1099.6533333333332 263 1107.6799999999998 263 1123.7333333333333 263 C 1139.7866666666664 263 1147.813333333333 263 1163.8666666666666 263 C 1179.9199999999998 263 1204 263 1204 263 L 1214 263"
+                                          isTracker="true" stroke-linejoin="bevel" visibility="visible"
+                                          stroke-opacity="0.000001" stroke="rgb(192,192,192)" stroke-width="22"
+                                          style=""/>
+                                </g>
+                                <g visibility="visible" zIndex="1" transform="translate(10,45)">
+                                    <path fill="none"
+                                          d="M -50.13333333333333 263 L -40.13333333333333 263 C -40.13333333333333 263 -16.053333333333335 263 0 263 C 16.053333333333335 263 24.080000000000002 263 40.13333333333333 263 C 56.18666666666667 263 64.21333333333334 263 80.26666666666667 263 C 96.32000000000001 263 104.34666666666666 263 120.39999999999999 263 C 136.45333333333332 263 144.48 263 160.53333333333333 263 C 176.58666666666667 263 184.61333333333332 263 200.66666666666666 263 C 216.71999999999997 263 224.74666666666667 263 240.79999999999998 263 C 256.85333333333335 263 264.88 263 280.93333333333334 263 C 296.9866666666667 263 305.0133333333333 263 321.06666666666666 263 C 337.12 263 345.14666666666665 263 361.2 263 C 377.2533333333333 263 385.28000000000003 263 401.3333333333333 263 C 417.38666666666666 263 425.4133333333333 263 441.46666666666664 263 C 457.52 263 465.5466666666666 263 481.59999999999997 263 C 497.6533333333333 263 505.68 263 521.7333333333333 263 C 537.7866666666666 263 545.8133333333333 263 561.8666666666667 263 C 577.92 263 585.9466666666667 263 602 263 C 618.0533333333333 263 626.08 263 642.1333333333333 263 C 658.1866666666667 263 666.2133333333334 263 682.2666666666667 263 C 698.3199999999999 263 706.3466666666666 263 722.4 263 C 738.4533333333333 263 746.4799999999999 263 762.5333333333333 263 C 778.5866666666667 263 786.6133333333333 263 802.6666666666666 263 C 818.72 263 826.7466666666666 263 842.8 263 C 858.8533333333332 263 866.8799999999999 263 882.9333333333333 263 C 898.9866666666665 263 907.0133333333333 263 923.0666666666666 263 C 939.1199999999999 263 947.1466666666668 263 963.1999999999999 263 C 979.2533333333333 263 987.28 263 1003.3333333333334 263 C 1019.3866666666667 263 1027.4133333333334 263 1043.4666666666667 263 C 1059.52 263 1067.5466666666666 263 1083.6 263 C 1099.6533333333332 263 1107.6799999999998 263 1123.7333333333333 263 C 1139.7866666666664 263 1147.813333333333 263 1163.8666666666666 263 C 1179.9199999999998 263 1204 263 1204 263 L 1214 263"
+                                          isTracker="true" stroke-linejoin="bevel" visibility="visible"
+                                          stroke-opacity="0.000001" stroke="rgb(192,192,192)" stroke-width="22"
+                                          style=""/>
+                                </g>
+                                <g visibility="visible" zIndex="1" transform="translate(10,45)">
+                                    <path fill="none"
+                                          d="M -50.13333333333333 263 L -40.13333333333333 263 C -40.13333333333333 263 -16.053333333333335 263 0 263 C 16.053333333333335 263 24.080000000000002 263 40.13333333333333 263 C 56.18666666666667 263 64.21333333333334 263 80.26666666666667 263 C 96.32000000000001 263 104.34666666666666 263 120.39999999999999 263 C 136.45333333333332 263 144.48 263 160.53333333333333 263 C 176.58666666666667 263 184.61333333333332 263 200.66666666666666 263 C 216.71999999999997 263 224.74666666666667 263 240.79999999999998 263 C 256.85333333333335 263 264.88 263 280.93333333333334 263 C 296.9866666666667 263 305.0133333333333 263 321.06666666666666 263 C 337.12 263 345.14666666666665 263 361.2 263 C 377.2533333333333 263 385.28000000000003 263 401.3333333333333 263 C 417.38666666666666 263 425.4133333333333 263 441.46666666666664 263 C 457.52 263 465.5466666666666 263 481.59999999999997 263 C 497.6533333333333 263 505.68 263 521.7333333333333 263 C 537.7866666666666 263 545.8133333333333 263 561.8666666666667 263 C 577.92 263 585.9466666666667 263 602 263 C 618.0533333333333 263 626.08 263 642.1333333333333 263 C 658.1866666666667 263 666.2133333333334 263 682.2666666666667 263 C 698.3199999999999 263 706.3466666666666 263 722.4 263 C 738.4533333333333 263 746.4799999999999 263 762.5333333333333 263 C 778.5866666666667 263 786.6133333333333 263 802.6666666666666 263 C 818.72 263 826.7466666666666 263 842.8 263 C 858.8533333333332 263 866.8799999999999 263 882.9333333333333 263 C 898.9866666666665 263 907.0133333333333 263 923.0666666666666 263 C 939.1199999999999 263 947.1466666666668 263 963.1999999999999 263 C 979.2533333333333 263 987.28 263 1003.3333333333334 263 C 1019.3866666666667 263 1027.4133333333334 263 1043.4666666666667 263 C 1059.52 263 1067.5466666666666 263 1083.6 263 C 1099.6533333333332 263 1107.6799999999998 263 1123.7333333333333 263 C 1139.7866666666664 263 1147.813333333333 263 1163.8666666666666 263 C 1179.9199999999998 263 1204 263 1204 263 L 1214 263"
+                                          isTracker="true" stroke-linejoin="bevel" visibility="visible"
+                                          stroke-opacity="0.000001" stroke="rgb(192,192,192)" stroke-width="22"
+                                          style=""/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="report-items">
+                <table class="stats-table">
+                    <tbody>
+                    <tr>
+                        <th class="col-num">
+                            <input type="radio" id="module_id" name="module_id" checked="checked" class="module"
+                                   value=""></th>
+                        <th>
+                            自动化任务
+                        </th>
+                        <th>
+                            所属项目
+                        </th>
+                        <th>
+                            用例数
+                        </th>
+                        <th style="text-align: center">
+                            运行状态
+                        </th>
+                        <th>
+                            负责人
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+        $("#report-date-picker").datepicker({
+            onSelect: function(){
+                var date = $.datepicker.formatDate('yy-mm-dd', ($("#report-date-picker").datepicker("getDate")));
+                location.href = getRootPath() + "/report/index/date/" + date;
+            },
+            dateFormat: "yy-mm-dd"
+        });
+
+        $("select#task_type").change(function(){
+            location.href = getRootPath() + "/report/index/task_type/" + $(this).val();
+        })
+
+        $("input.module").click(function(){
+            location.href = getRootPath() + "/report/index/module_id/" + $(this).val();
+        })
+
+        $("select#products").change(function(){
+            location.href = getRootPath() + "/report/index/product_id/" + $(this).val();;
+        });
+
+        $("input.send-current-report").on("click", function(){
+            var url = location.href.replace(/index/, "sendcurrentreport");
+            $.getJSON(url, null, function(json){
+                if(json.status) {
+                    $("div.notify").text("已发送")
+                } else {
+                    $("div.notify").text(json.msg)
+                }
+                $("div.notify").fadeIn().delay(3000).fadeOut()
+            })
+        })
+    });
+
+
+
+
+
+
+
+    </script>
+</div>
+<script src="../../static/js/jui/jquery-ui-i18n.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*&lt;![CDATA[*/
+jQuery(function($) {
+jQuery('#report-date-picker').datepicker(jQuery.extend({showMonthAfterYear:false}, jQuery.datepicker.regional['zh_cn'], {'showAnim':'fold','dateFormat':'yy-mm-dd'}));
+new QueryBuilder("search",{'action':'http://172.16.14.189/#table#/index/task_type/3/date/2015-10-12/product_id/1/r/1','queryListUrl':'http://172.16.14.189/query/getlist','createQueryUrl':'http://172.16.14.189/query/create','updateQueryUrl':'http://172.16.14.189/query/update','deleteQueryUrl':'http://172.16.14.189/query/delete','cTable':'report','tables':{'report':{'label':'报表','items':{'task_name':{'label':'任务名称','type':'text','operators':{'':'包含','-':'不包含','==':'等于','-=':'不等于'}},'project_path':{'label':'所属项目','type':'text','operators':{'in':'在某路径下','==':'等于','-=':'不等于'}},'status':{'label':'运行状态','type':'select','operators':{'==':'等于','-=':'不等于'},'data':{'100':'等待','101':'正在运行','200':'完成','201':'取消','300':'超时','400':'服务器异常','401':'测试机异常','102':'正在取消','301':'Build失败'}},'responsible_username':{'label':'负责人','type':'select','operators':{'==':'等于','-=':'不等于'},'data':{'':''}}}}}})
+var chart = new Highcharts.Chart({'chart':{'renderTo':'yw0','marginTop':30,'reflow':true},'exporting':{'enabled':false},'title':{'text':null},'credits':{'enabled':false},'plotOptions':{'pie':{'allowPointSelect':true,'cursor':'pointer','dataLabels':{'enabled':true,'formatter':function() {
+                                    return this.point.name + ": " +
+                                    Math.round(this.point.percentage*10)/10+ "%";
+                                }}}},'tooltip':{'formatter':function(){
+                            if (this.point.name == "fill")
+                                return false;
+                            return this.point.name + ": " + this.y;
+                        }},'series':[{'type':'pie','name':'代码覆盖率','data':[{'name':'通过用例','y':0,'color':'#89A54E'},{'name':'失败用例','y':0,'color':'#AA4643'},{'name':'fill','visible':false,'y':1}],'center':['30%','50%']},{'type':'pie','name':'自动化任务','data':[{'name':'成功','y':0,'color':'#89A54E'},{'name':'失败','y':0,'color':'#AA4643'},{'name':'其他','y':0,'color':'#E99D12'},{'name':'fill','y':1,'visible':false}],'center':['70%','50%']}]});
+var chart = new Highcharts.StockChart({'chart':{'renderTo':'yw1','borderWidth':0,'marginTop':20,'type':'spline'},'exporting':{'enabled':false},'colors':['#89A54E','#AA4643','#4572A7','#80699B'],'rangeSelector':{'selected':0},'credits':{'enabled':false},'legend':{'enabled':true,'floating':true,'layout':'vertical','align':'left','shadow':true,'verticalAlign':'top','x':40,'y':40,'backgroundColor':'#FFFFFF'},'tooltip':{'formatter':function() {
+                            var tip = "&lt;b&gt;"+Highcharts.dateFormat("%a %b %e %Y", this.x)+"&lt;/b&gt;";
+                            $.each(this.points, function(i, point) {
+                                tip += "&lt;br/&gt;" + point.series.name + ": "+ point.y;
+                                if (point.series.name == "代码覆盖率")
+                                    tip += "%";
+                            });
+                            return tip;
+                        }},'yAxis':[{'title':{'text':null},'min':0},{'title':{'text':null},'labels':{'formatter':function(){
+                                    return this.value + "%";
+                                },'style':{'color':'#89A54E'}},'min':0,'opposite':true}],'plotOptions':{'series':{'marker':{'enabled':false,'states':{'hover':{'enabled':true,'radius':3}}}}},'series':[{'name':'通过用例','pointStart':1413158400000,'pointInterval':86400000,'data':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{'name':'失败用例','pointStart':1413158400000,'pointInterval':86400000,'data':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{'name':'全部用例','pointStart':1413158400000,'pointInterval':86400000,'data':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}]});
+});
+/*]]&gt;*/
+
+
+
+
+
+
+
+</script>
+
+<div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div"
+     style="position: absolute; top: 0px; left: 341.733px; z-index: 1; display: none;">
+    <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a title="&lt;上月"
+                                                                                           data-event="click"
+                                                                                           data-handler="prev"
+                                                                                           class="ui-datepicker-prev ui-corner-all"><span
+            class="ui-icon ui-icon-circle-triangle-w">&lt;上月</span></a><a title="下月&gt;" data-event="click"
+                                                                          data-handler="next"
+                                                                          class="ui-datepicker-next ui-corner-all"><span
+            class="ui-icon ui-icon-circle-triangle-e">下月&gt;</span></a>
+
+        <div class="ui-datepicker-title"><span class="ui-datepicker-year">2015</span>年&nbsp;<span
+                class="ui-datepicker-month">十月</span></div>
+    </div>
+    <table class="ui-datepicker-calendar">
+        <thead>
+        <tr>
+            <th><span title="星期一">一</span></th>
+            <th><span title="星期二">二</span></th>
+            <th><span title="星期三">三</span></th>
+            <th><span title="星期四">四</span></th>
+            <th><span title="星期五">五</span></th>
+            <th class="ui-datepicker-week-end"><span title="星期六">六</span></th>
+            <th class="ui-datepicker-week-end"><span title="星期日">日</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+            <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+            <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">1</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">2</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">3</a></td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">4</a></td>
+        </tr>
+        <tr>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">5</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">6</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">7</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">8</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">9</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">10</a></td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">11</a></td>
+        </tr>
+        <tr>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class="  ui-datepicker-current-day"><a href="#" class="ui-state-default ui-state-active">12</a></td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">13</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class="  ui-datepicker-today"><a href="#" class="ui-state-default ui-state-highlight">14</a></td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">15</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">16</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">17</a></td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">18</a></td>
+        </tr>
+        <tr>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">19</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">20</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">21</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">22</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">23</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">24</a></td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">25</a></td>
+        </tr>
+        <tr>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">26</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">27</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">28</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">29</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay" class=" "><a href="#"
+                                                                                                         class="ui-state-default">30</a>
+            </td>
+            <td data-year="2015" data-month="9" data-event="click" data-handler="selectDay"
+                class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">31</a></td>
+            <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                &nbsp;</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div style="display: none; z-index: 1000; outline: 0px none;"
+     class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog"
+     aria-labelledby="ui-dialog-title-1">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title"
+                                                                                            id="ui-dialog-title-1">给保存的搜索命名</span><a
+            href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span
+            class="ui-icon ui-icon-closethick">close</span></a></div>
+    <div class="save-query-dialog ui-dialog-content ui-widget-content" style="display: block;">
+        <div class="dialog-error"></div>
+        <input type="text" id="Query_title" name="Query[title]" value="" class="query-title" placeholder="搜索名称">
+
+        <div class="save-query-dialog-action"><input type="button" value="保存" name="yt1" class="save"><input
+                type="button" value="取消" name="yt2" class="cancel"></div>
+    </div>
+</div>
+</body>
+</html>

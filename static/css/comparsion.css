@@ -1,0 +1,14 @@
+.widget-view .result {
+    width: 100px;
+}
+.widget-view .info {
+    text-align: left;
+    vertical-align: top;
+}
+.output {
+    background: #FFFFDD;
+    color: #000000;
+    font: 13px/1.5 arial;
+    padding: 5px;
+    min-height: 600px;
+}

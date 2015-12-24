@@ -1,0 +1,13 @@
+.basic-info label {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 26px;
+    display: block;
+    color: #919191;
+}
+.detail label {
+    color: #919191;
+}
+.row-fluid:last-child {
+    margin-bottom: 0;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="static/css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="static/css/tree.css"/>
+        <link rel="stylesheet" type="text/css" href="static/css/status.css"/>
+        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" />
+                <link rel="stylesheet" type="text/css" href="static/css/search.css" />
+<link rel="stylesheet" type="text/css" href="static/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="static/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="static/css/pager.css" />
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.ba-bbq.js"></script>
+<script type="text/javascript" src="static/js/qb.js"></script>
+<title>TOAST</title>
+        <script type="text/javascript" src="static/js/lib.js"></script>
+        <script type="text/javascript" src="static/js/lib.cookie.js"></script>
+        <script type="text/javascript" src="static/js/lib.treeview.js"></script>
+        <script type="text/javascript" src="static/js/config.js"></script>
+        <script type="text/javascript" src="static/js/lang.js"></script>
+        <script type="text/javascript" src="static/js/bootstrap.js"></script>
+    </head>
+    <body>
+        <div class="bg">
+            <div class="header">
+                <div class="logo">
+                    <a href="/task">
+                        <img alt="TOAST" src="/themes/classic/assets/images/page_logo.png" />
+                    </a>
+                </div>
+                <ul id="nav">
+<li><a href="/task">任务</a></li>
+<li><a href="/report">报表</a></li>
+<li><a href="/case">用例</a></li>
+<li><a href="/machine">测试机</a></li>
+</ul><ul id="user">
+<li><a id="username" >{{username}}</a></li>
+<li><a href="/projectlist">管理入口</a></li>
+<li class="last"><a href="/logout">退出</a></li>
+</ul>            </div>
+            <div class="notify hidden">
+                NOTIFY BAR
+            </div>
+            <div class="content">
+    <div class="sub-nav">
+        <ul id="sub-menu">
+<li class="active"><a href="/projectlist">产品管理</a></li>
+<li><a href="/userlist">用户管理</a></li>
+</ul>        <div class="search">
+            <input class="qb-search span10" placeholder="查找" autocomplete="off" type="text" name="search" id="search" /><div class="qb-search-btn" title="显示高级搜索"></div><div class="qb-search-panel"><div class="qb-search-panel-x"></div><div class="item table-list"><span class="table-label">搜索</span><select name="table" id="table">
+</select></div><div class="item action"><a class="search-btn" href="javascript:;"><i class="search"></i> 查找</a><a class="reset-query" href="javascript:;">重置搜索</a><a class="save-query" href="javascript:;">将此搜索保存</a></div><div class="query-list"></div></div><div class="save-query-dialog"><div class="dialog-error"></div><input placeholder="搜索名称" class="query-title" type="text" value="" name="Query[title]" id="Query_title" /><div class="save-query-dialog-action"><input class="save" name="yt0" type="button" value="保存" /><input class="cancel" name="yt1" type="button" value="取消" /></div></div>        </div>
+    </div>
+    <div class="main-list">
+        <div class="link-bar">
+            <span class="product-new icon-link"><a href="/projectmanger">新建</a></span>
+        </div>
+        <div class="widget-view" id="vproducts">
+<div class="items">
+<div class="table-header">
+<table>
+<thead>
+<tr>
+<th class="id" id="vproducts_c0"><a class="sort-link" href="/admin/product/index/VProduct_sort/id">#</a></th><th class="name" id="vproducts_c1"><a class="sort-link" href="/admin/product/index/VProduct_sort/name">产品名称</a></th><th id="vproducts_c2"><a class="sort-link" href="/admin/product/index/VProduct_sort/created_by_realname">创建者</a></th><th id="vproducts_c3"><a class="sort-link" href="/admin/product/index/VProduct_sort/updated_by_realname">修改者</a></th><th id="vproducts_c4"><a class="sort-link" href="/admin/product/index/VProduct_sort/create_time">创建时间</a></th><th id="vproducts_c5"><a class="sort-link" href="/admin/product/index/VProduct_sort/update_time">最后修改时间</a></th><th id="vproducts_c6"><a class="sort-link" href="/admin/product/index/VProduct_sort/status">状态</a></th></tr>
+</thead>
+</table>
+</div>
+<div class='top-shadow'>
+</div>
+<div class="table-body">
+<table class="items">
+<thead>
+</thead>
+<tbody>
+<tr><td class="id" title="1">1</td><td class="name" title="Sample">Sample</td><td title="Admin">Admin</td><td title="Admin">Admin</td><td title="2015-08-31 03:49:05">2015-08-31 03:49:05</td><td title="2015-08-31 03:49:05">2015-08-31 03:49:05</td><td title="正常">正常</td></tr>
+</tbody>
+</table>
+</div>
+<div class='bottom-shadow'>
+</div>
+</div><div class="pager"></div><div class="keys" style="display:none" title="/admin/product"><span>1</span></div>
+</div>    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        inputFocus();
+        $("select.page-size").change(function(){
+            var data = {'pagesize': $(this).val()};
+            $.get(toast.setPageSize, data, function(){
+                location.reload();
+            });
+        })
+        setListHeight();
+        $(window).resize(function(){
+            setListHeight();
+        })
+        //    $("div#vproducts table.items tbody tr").click(function(){
+        //        var productId = $(this).children("td:first").text();
+        //        location.href = getRootPath() + "/admin/product/update/id/" + productId;
+        //    });
+    });
+</script>        </div>
+    <script type="text/javascript" src="/assets/1418b4db/gridview/jquery.yiigridview.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+jQuery(function($) {
+new QueryBuilder("search",{'action':'http://172.16.14.189/admin/#table#/index','queryListUrl':'http://172.16.14.189/query/getlist','createQueryUrl':'http://172.16.14.189/query/create','updateQueryUrl':'http://172.16.14.189/query/update','deleteQueryUrl':'http://172.16.14.189/query/delete','cTable':'product','tables':{'product':{'label':'产品','items':{'id':{'label':'ID','type':'text','operators':{'==':'等于','-=':'不等于','>=':'大于等于','>':'大于','<':'小于','<=':'小于等于','=':'包含','!=':'不包含'}},'name':{'label':'产品名称','type':'text','operators':{'':'含有','-':'不含有'}},'created_by_username':{'label':'创建者','type':'select','operators':{'==':'等于','-=':'不等于'},'data':{'':''}},'create_time':{'label':'创建时间','type':'text','operators':{'':'等于','-':'不等于','>=':'大于等于','>':'大于','<':'小于','<=':'小于等于'}},'updated_by_username':{'label':'修改者','type':'select','operators':{'==':'等于','-=':'不等于'},'data':{'':''}},'update_time':{'label':'修改时间','type':'text','operators':{'':'等于','-':'不等于','>=':'大于等于','>':'大于','<':'小于','<=':'小于等于'}}}}}})
+
+                var opacityBottom = (jQuery('#vproducts .table-body').children().height() > jQuery('#vproducts .table-body').height())?1:0;
+                jQuery('#vproducts .bottom-shadow').attr('style', 'opacity: ' + opacityBottom);
+                jQuery('#vproducts .table-body').scroll(function(){
+                var opacityTop = $(this).scrollTop()/50;
+                var opacityBottom = ($(this).children().height() - $(this).scrollTop() - $(this).height())/50;
+                jQuery('#vproducts .top-shadow').attr('style', 'opacity: ' + opacityTop);
+                jQuery('#vproducts .bottom-shadow').attr('style', 'opacity: ' + opacityBottom);
+            })
+jQuery('#vproducts').yiiGridView({'ajaxUpdate':['vproducts'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'grid-view-loading','filterClass':'filters','tableClass':'items','selectableRows':1,'enableHistory':false,'updateSelector':'{page}, {sort}','pageVar':'VProduct_page','afterAjaxUpdate':function(){setListHeight();triggerPageSizeChange()},'selectionChanged':function(id){
+                        var selectedID = $.fn.yiiGridView.getSelection(id);
+                        if(selectedID.toString().match(/\d+/))
+                            location.href = getRootPath() + "/admin/product/update/id/" + selectedID;
+                    }});
+});
+/*]]>*/
+</script>
+</body>
+</html>

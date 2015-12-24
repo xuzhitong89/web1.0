@@ -1,0 +1,614 @@
+
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+*|*::-moz-fieldset-content {
+    display: block;
+    height: 100%;
+    overflow: inherit;
+    padding: inherit;
+    text-overflow: inherit;
+    unicode-bidi: inherit;
+}
+fieldset > legend {
+    padding-left: 2px;
+    padding-right: 2px;
+    width: -moz-fit-content;
+}
+legend {
+    display: block;
+}
+fieldset {
+    border: 2px groove threedface;
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+label {
+    cursor: default;
+}
+input {
+    -moz-appearance: textfield;
+    -moz-binding: url("chrome://global/content/platformHTMLBindings.xml#inputFields");
+    -moz-user-select: text;
+    background-color: -moz-field;
+    border: 2px inset threedface;
+    color: -moz-fieldtext;
+    cursor: text;
+    font: ;
+    letter-spacing: normal;
+    line-height: normal;
+    padding: 1px;
+    text-align: start;
+    text-indent: 0;
+    text-rendering: optimizelegibility;
+    text-shadow: none;
+    text-transform: none;
+    word-spacing: normal;
+}
+input > .anonymous-div, input::-moz-placeholder {
+    line-height: -moz-block-height;
+    word-wrap: normal !important;
+}
+@-moz-document url-prefix("chrome://") {
+input.uri-element-right-align:-moz-locale-dir(rtl) {
+    direction: ltr !important;
+    text-align: right !important;
+}
+input.uri-element-right-align[dir="ltr"]:-moz-locale-dir(rtl) {
+    text-align: left !important;
+}
+}
+textarea {
+    -moz-appearance: textfield-multiline;
+    -moz-binding: url("chrome://global/content/platformHTMLBindings.xml#textAreas");
+    -moz-user-select: text;
+    background-color: -moz-field;
+    border: 2px inset threedface;
+    color: -moz-fieldtext;
+    cursor: text;
+    font: medium -moz-fixed;
+    letter-spacing: normal;
+    margin: 1px 0;
+    padding: 0 1px;
+    resize: both;
+    text-align: start;
+    text-indent: 0;
+    text-rendering: optimizelegibility;
+    text-shadow: none;
+    text-transform: none;
+    vertical-align: text-bottom;
+    white-space: pre-wrap;
+    word-spacing: normal;
+    word-wrap: break-word;
+}
+textarea > scrollbar {
+    cursor: default;
+}
+textarea > .anonymous-div, input > .anonymous-div, input::-moz-placeholder, textarea::-moz-placeholder {
+    -moz-control-character-visibility: visible;
+    border: 0 none !important;
+    display: inline-block;
+    ime-mode: inherit;
+    margin: 0;
+    overflow: auto;
+    padding: inherit !important;
+    resize: inherit;
+    text-decoration: inherit;
+}
+input > .anonymous-div, input::-moz-placeholder {
+    white-space: pre;
+}
+input > .anonymous-div.wrap {
+    white-space: pre-wrap;
+}
+textarea > .anonymous-div.inherit-overflow, input > .anonymous-div.inherit-overflow {
+    overflow: inherit;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    display: inline-block !important;
+    opacity: 0.54;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    resize: none !important;
+}
+textarea::-moz-placeholder {
+    white-space: pre-wrap !important;
+}
+input:-moz-read-write, textarea:-moz-read-write {
+    -moz-user-modify: read-write !important;
+}
+select {
+    -moz-appearance: menulist;
+    -moz-user-select: none;
+    background-color: -moz-combobox;
+    border-color: threedface;
+    border-style: inset;
+    border-width: 2px;
+    box-sizing: border-box;
+    color: -moz-comboboxtext;
+    cursor: default;
+    display: inline-block;
+    font: ;
+    line-height: normal !important;
+    margin: 0;
+    overflow: -moz-hidden-unscrollable;
+    page-break-inside: avoid;
+    text-align: start;
+    text-indent: 0;
+    text-shadow: none;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+}
+select[size], select[multiple], select[size][multiple] {
+    -moz-appearance: listbox;
+    background-color: -moz-field;
+    color: -moz-fieldtext;
+    padding: 1px 0;
+    vertical-align: text-bottom;
+}
+select[size="0"], select[size="1"] {
+    -moz-appearance: menulist;
+    background-color: -moz-combobox;
+    color: -moz-comboboxtext;
+    padding: 0;
+    vertical-align: baseline;
+}
+select > button {
+    -moz-appearance: menulist-button;
+    background-image: url("arrow.gif") !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+    position: static !important;
+    vertical-align: top !important;
+    white-space: nowrap;
+    width: 12px;
+}
+select > button:active {
+    background-image: url("arrowd.gif") !important;
+}
+select:empty {
+    width: 2.5em;
+}
+*|*::-moz-display-comboboxcontrol-frame {
+    -moz-padding-end: 0;
+    -moz-padding-start: 4px;
+    -moz-user-select: none;
+    box-sizing: border-box !important;
+    color: inherit;
+    height: 100% !important;
+    line-height: -moz-block-height;
+    overflow: -moz-hidden-unscrollable;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    text-align: inherit;
+    white-space: nowrap;
+}
+option {
+    -moz-user-select: none;
+    display: block;
+    float: none !important;
+    line-height: normal !important;
+    min-height: 1em;
+    position: static !important;
+    text-indent: 0;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+}
+select > option {
+    -moz-padding-end: 5px;
+    -moz-padding-start: 3px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+option:checked {
+    background-color: -moz-html-cellhighlight !important;
+    color: -moz-html-cellhighlighttext !important;
+}
+select:focus > option:checked, select:focus > optgroup > option:checked {
+    background-color: highlight !important;
+    color: highlighttext !important;
+}
+optgroup {
+    -moz-user-select: none;
+    display: block;
+    float: none !important;
+    font: ;
+    font-size: inherit;
+    font-style: italic;
+    font-weight: bold;
+    line-height: normal !important;
+    position: static !important;
+    text-indent: 0;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+}
+optgroup > option {
+    -moz-padding-start: 20px;
+    font-style: normal;
+    font-weight: normal;
+}
+optgroup::before {
+    content: attr(label);
+    display: block;
+}
+*|*::-moz-dropdown-list {
+    -moz-border-bottom-colors: none !important;
+    -moz-border-left-colors: none !important;
+    -moz-border-right-colors: none !important;
+    -moz-border-top-colors: none !important;
+    -moz-user-select: none;
+    background-color: inherit;
+    border-color: black !important;
+    border-image: none !important;
+    border-style: outset !important;
+    border-width: 1px 1px 1px 2px !important;
+    float: none !important;
+    position: static !important;
+    z-index: 2147483647;
+}
+input:disabled, textarea:disabled, option:disabled, optgroup:disabled, select:disabled:disabled {
+    -moz-user-input: disabled;
+    background-color: threedface;
+    color: graytext;
+    cursor: inherit;
+}
+input:disabled, textarea:disabled {
+    cursor: default;
+}
+option:disabled, optgroup:disabled {
+    background-color: transparent;
+}
+input[type="hidden"] {
+    -moz-appearance: none;
+    -moz-binding: none;
+    -moz-user-focus: ignore;
+    border: 0 none;
+    cursor: auto;
+    display: none !important;
+    padding: 0;
+}
+input[type="image"] {
+    -moz-appearance: none;
+    -moz-binding: none;
+    background-color: transparent;
+    border: medium none;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: small;
+    padding: 0;
+}
+input[type="image"]:disabled {
+    cursor: inherit;
+}
+input[type="image"]:-moz-focusring {
+    outline: 1px dotted;
+}
+input[type="file"] {
+    -moz-appearance: none;
+    -moz-binding: none;
+    background-color: transparent;
+    border: medium none;
+    color: inherit;
+    cursor: default;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0;
+    white-space: nowrap;
+}
+input[type="file"] > xul|label {
+    -moz-padding-start: 5px;
+    color: inherit;
+    direction: ltr !important;
+    font-size: inherit;
+    letter-spacing: inherit;
+    min-width: 12em;
+}
+input[type="file"] > button[type="button"] {
+    cursor: inherit;
+    font-size: inherit;
+    height: inherit;
+    letter-spacing: inherit;
+}
+input[type="color"]:-moz-system-metric(color-picker-available)::-moz-color-swatch {
+    border: 1px solid grey;
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 3px;
+    min-width: 3px;
+    width: 100%;
+}
+input[type="file"]:-moz-dir(rtl) > xul|label {
+    -moz-padding-start: 0;
+    padding-right: 5px;
+    text-align: right;
+}
+input[type="radio"] {
+    -moz-appearance: radio;
+    border-radius: 100% !important;
+    margin: 3px 3px 0 5px;
+}
+input[type="checkbox"] {
+    -moz-appearance: checkbox;
+    border-radius: 0 !important;
+    margin: 3px 3px 3px 4px;
+}
+input[type="radio"], input[type="checkbox"] {
+    -moz-binding: none;
+    background-color: -moz-field !important;
+    border: 2px inset threedface !important;
+    box-sizing: border-box;
+    color: -moz-fieldtext !important;
+    cursor: default;
+    height: 13px;
+    padding: 0 !important;
+    width: 13px;
+}
+input[type="radio"]:disabled, input[type="radio"]:disabled:active, input[type="radio"]:disabled:hover, input[type="radio"]:disabled:hover:active, input[type="checkbox"]:disabled, input[type="checkbox"]:disabled:active, input[type="checkbox"]:disabled:hover, input[type="checkbox"]:disabled:hover:active {
+    background-color: threedface !important;
+    border: 1px inset threedshadow !important;
+    color: graytext !important;
+    cursor: inherit;
+    padding: 1px;
+}
+input[type="checkbox"]:-moz-focusring, input[type="radio"]:-moz-focusring {
+    border-style: groove !important;
+}
+input[type="checkbox"]:hover:active, input[type="radio"]:hover:active {
+    background-color: threedface !important;
+    border-style: inset !important;
+}
+button, input[type="color"]:-moz-system-metric(color-picker-available), input[type="reset"], input[type="button"], input[type="submit"] {
+    -moz-appearance: button;
+    -moz-binding: none;
+    -moz-user-select: none;
+    background-color: buttonface;
+    border: 2px outset buttonface;
+    box-sizing: border-box;
+    cursor: default;
+    padding: 0 6px;
+}
+button, input[type="reset"], input[type="button"], input[type="submit"] {
+    color: buttontext;
+    font: ;
+    line-height: normal;
+    text-align: center;
+    text-shadow: none;
+    white-space: pre;
+}
+input[type="color"]:-moz-system-metric(color-picker-available) {
+    height: 23px;
+    width: 64px;
+}
+button {
+    display: inline-block;
+    text-indent: 0;
+    white-space: inherit;
+}
+*|*::-moz-button-content {
+    display: block;
+}
+button:hover, input[type="color"]:-moz-system-metric(color-picker-available):hover, input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover {
+    background-color: -moz-buttonhoverface;
+}
+button:hover, input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover {
+    color: -moz-buttonhovertext;
+}
+button:active:hover, input[type="color"]:-moz-system-metric(color-picker-available):active:hover, input[type="reset"]:active:hover, input[type="button"]:active:hover, input[type="submit"]:active:hover {
+    background-color: buttonface;
+    border-style: inset;
+    padding: 0 5px 0 7px;
+}
+button:active:hover, input[type="reset"]:active:hover, input[type="button"]:active:hover, input[type="submit"]:active:hover {
+    color: buttontext;
+}
+button::-moz-focus-inner, input[type="color"]:-moz-system-metric(color-picker-available)::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > button[type="button"]::-moz-focus-inner {
+    border: 1px dotted transparent;
+    padding: 0 2px;
+}
+button:-moz-focusring::-moz-focus-inner, input[type="color"]:-moz-system-metric(color-picker-available):-moz-focusring::-moz-focus-inner, input[type="reset"]:-moz-focusring::-moz-focus-inner, input[type="button"]:-moz-focusring::-moz-focus-inner, input[type="submit"]:-moz-focusring::-moz-focus-inner, input[type="file"] > button[type="button"]:-moz-focusring::-moz-focus-inner {
+    border-color: buttontext;
+}
+button:disabled:active, button:disabled, input[type="color"]:-moz-system-metric(color-picker-available):disabled:active, input[type="color"]:-moz-system-metric(color-picker-available):disabled, input[type="reset"]:disabled:active, input[type="reset"]:disabled, input[type="button"]:disabled:active, input[type="button"]:disabled, select:disabled > button, select:disabled > button, input[type="submit"]:disabled:active, input[type="submit"]:disabled {
+    border: 2px outset buttonface;
+    cursor: inherit;
+    padding: 0 6px;
+}
+button:disabled:active, button:disabled, input[type="reset"]:disabled:active, input[type="reset"]:disabled, input[type="button"]:disabled:active, input[type="button"]:disabled, select:disabled > button, select:disabled > button, input[type="submit"]:disabled:active, input[type="submit"]:disabled {
+    color: graytext;
+}
+textarea > .anonymous-div, input > .anonymous-div, input::-moz-placeholder, textarea::-moz-placeholder, *|*::-moz-button-content, *|*::-moz-display-comboboxcontrol-frame, optgroup::before {
+    text-overflow: inherit;
+    unicode-bidi: inherit;
+}
+:-moz-ui-invalid:not(output) {
+    box-shadow: 0 0 1.5px 1px red;
+}
+:-moz-ui-invalid:-moz-focusring:not(output) {
+    box-shadow: 0 0 2px 2px rgba(255, 0, 0, 0.4);
+}
+output:-moz-ui-invalid {
+    color: red;
+}
+@media print {
+input, textarea, select, button {
+    -moz-user-input: none !important;
+}
+input[type="file"] {
+    height: 2em;
+}
+}
+progress {
+    -moz-appearance: progressbar;
+    -moz-border-bottom-colors: threedhighlight #e6e6e6;
+    -moz-border-left-colors: threedshadow #e6e6e6;
+    -moz-border-right-colors: threedhighlight #e6e6e6;
+    -moz-border-top-colors: threedshadow #e6e6e6;
+    background-color: #e6e6e6;
+    border-color: -moz-use-text-color;
+    border-image: none;
+    border-style: solid;
+    border-width: 2px;
+    display: inline-block;
+    vertical-align: -0.2em;
+}
+*::-moz-progress-bar {
+    -moz-appearance: progresschunk;
+    background-color: #0064b4;
+    box-sizing: border-box !important;
+    display: inline-block !important;
+    float: none !important;
+    height: 100%;
+    overflow: visible !important;
+    position: static !important;
+    width: 100%;
+}
+meter {
+    -moz-appearance: meterbar;
+    background: linear-gradient(#e6e6e6, #e6e6e6, #eeeeee 20%, #cccccc 45%, #cccccc 55%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    vertical-align: -0.2em;
+}
+*::-moz-meter-bar {
+    -moz-appearance: meterchunk;
+    display: inline-block !important;
+    float: none !important;
+    height: 100%;
+    overflow: visible !important;
+    position: static !important;
+    width: 100%;
+}
+:-moz-meter-optimum::-moz-meter-bar {
+    background: linear-gradient(#ad7, #ad7, #cea 20%, #7a3 45%, #7a3 55%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: linear-gradient(#fe7, #fe7, #ffc 20%, #db3 45%, #db3 55%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: linear-gradient(#f77, #f77, #fcc 20%, #d44 45%, #d44 55%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+input[type="range"] {
+    -moz-appearance: range;
+    -moz-binding: none;
+    -moz-user-select: none !important;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    cursor: default;
+    display: inline-block;
+    height: 1.3em;
+    margin: 0 0.7em;
+    width: 12em;
+}
+input[type="range"][orient="vertical"] {
+    height: 12em;
+    width: 1.3em;
+}
+input[type="range"]::-moz-focus-outer {
+    border: 1px dotted black;
+}
+input[type="range"]::-moz-range-track {
+    -moz-user-select: none !important;
+    background-color: #999;
+    border: medium none;
+    display: inline-block !important;
+    float: none !important;
+    height: 0.2em;
+    position: static !important;
+    width: 100%;
+}
+input[type="range"][orient="vertical"]::-moz-range-track {
+    border-bottom: medium none;
+    border-top: medium none;
+    height: 100%;
+    width: 0.2em;
+}
+input[type="range"]::-moz-range-progress {
+    -moz-user-select: none !important;
+    display: inline-block !important;
+    float: none !important;
+    height: 0.2em;
+    position: static !important;
+    width: 0.2em;
+}
+input[type="range"]::-moz-range-thumb {
+    -moz-appearance: range-thumb !important;
+    -moz-user-select: none !important;
+    background-color: #f0f0f0;
+    border: 0.1em solid #999;
+    border-radius: 0.5em;
+    display: inline-block !important;
+    float: none !important;
+    height: 1em;
+    position: static !important;
+    width: 1em;
+}
+input[type="number"]::-moz-number-wrapper {
+    display: flex;
+    float: none !important;
+    height: 100%;
+    position: static !important;
+}
+input[type="number"]::-moz-number-text {
+    -moz-appearance: none;
+    -moz-user-modify: read-write;
+    border: 0 none;
+    flex: 1 1 0;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    text-align: inherit;
+}
+input[type="number"]::-moz-number-spin-box {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    justify-content: center;
+}
+input[type="number"]::-moz-number-spin-up {
+    -moz-appearance: spinner-upbutton;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-image: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"6\" height=\"5\"><path d=\"M1,4 L3,0 5,4\" fill=\"dimgrey\"/></svg>");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border-color: darkgray darkgray -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-width: 1px 1px medium;
+    cursor: default;
+    display: block;
+    flex: 0 0 auto;
+}
+input[type="number"]::-moz-number-spin-down {
+    -moz-appearance: spinner-downbutton;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-image: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"6\" height=\"5\"><path d=\"M1,1 L3,5 5,1\" fill=\"dimgrey\"/></svg>");
+    background-position: center top;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-color: -moz-use-text-color darkgray darkgray;
+    border-image: none;
+    border-right: 1px solid darkgray;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    cursor: default;
+    display: block;
+    flex: 0 0 auto;
+}
+input[type="number"] > div > div > div:hover {
+    background-color: lightblue;
+}

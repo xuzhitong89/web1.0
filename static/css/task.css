@@ -1,0 +1,252 @@
+.sub-nav #path-nav li {
+    max-width: 750px;
+}
+
+.sub-nav #path-nav li.first {
+    max-width: 250px;
+}
+
+.basic-info {
+    padding: 10px 15px;
+}
+
+.basic-info label {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 26px;
+    display: block;
+    color: #919191;
+}
+
+.run-summary {
+    position: absolute;
+    top: 165px;
+    right: 40px;
+    float: right;
+    padding: 10px;
+    background: #EFEFEF;
+}
+
+.run-summary table {
+    width: 170px;
+}
+
+.run-summary  th {
+    text-align: left;
+    font-weight: normal;
+}
+
+.run-summary td {
+    width: 65px;
+    text-align: center;
+    padding: 2px 10px;
+    border: 1px solid #EFEFEF;
+    cursor: pointer;
+}
+
+.run-summary td.summary-status {
+    cursor: auto;
+}
+
+.run-summary .total {
+    background: #DFDFDF;
+    color: #000;
+    font-weight: bold;
+}
+
+.stage {overflow: auto; white-space:nowrap;}
+.stage .job {margin: 5px; padding: 10px 10px 5px 10px}
+.basic-info .stage .job {margin: 0px 5px 0px 0px; padding-top: 7px}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.job .result {
+    margin: -11px -11px 7px -11px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    text-align: center;
+}
+
+.job label {
+    color: #919191;
+}
+
+.case-ratio {
+    display: inline-block;
+    text-align: center;
+}
+
+.rate-low {
+    color: #AA4643;
+}
+
+.rate-medium {
+    color: #E99D12;
+}
+
+.rate-high {
+    color: #89A54E;
+}
+
+.exclusive-checkbox input,
+.wait-machine-checkbox input
+{
+    margin-top: 6px;
+    float: left;
+}
+
+.close
+{
+    padding: 2px 5px;
+}
+
+.add-job {
+    width: 590px;
+    border: 1px dashed #999999;
+    margin: 5px; 
+    padding: 29px 5px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    /*    float: left;*/
+    display: inline-block;
+    vertical-align: top;
+}
+
+.add-job:hover {
+    cursor: pointer;
+    background-color: #F2F6F9;
+}
+
+.add-job a {
+    display: block;
+    overflow: hidden;
+    color: #666666;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 60px;
+    text-indent: 70px;
+    background: url(../images/icon-add.png) 45px 50% no-repeat;
+}
+
+.job-sort-highlight {
+    width: 590px; 
+    height: 109px;
+    /*    float: left; */
+    border: 1px dashed #999; 
+    margin: 5px;
+    padding: 5px; 
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #FBFBFF;
+    display: inline-block;
+}
+
+#run-tabs li {
+    text-decoration: underline;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    width: 50%;
+    padding: 5px 0px;
+    background: #FAFAFA;
+}
+
+#run-tabs .selected {
+    text-decoration: none;
+    cursor: auto;
+    background: #EEEEEE;
+}
+
+#run-fields {
+    padding: 10px;
+    background: #EEEEEE;
+}
+
+#command-tabs li {
+    display: inline;
+    text-decoration: underline;
+    padding: 3px;
+    cursor: pointer;
+}
+
+#command-tabs li.selected {
+    text-decoration: none;
+    background: #CCCCCC;
+    cursor: auto;
+}
+
+.field-with-border {
+    border: 1px solid #CCCCCC;
+    padding: 8px;
+}
+
+#run-fields hr {
+    margin: 8px -8px;
+}
+
+select {
+    height: 23px;
+}
+
+.upload-file {
+    float: left;
+    padding: 4px;
+    text-decoration: underline;
+    color: #008CD8;
+}
+
+.upload-file-input {
+    position: relative;
+    left: -60px;
+    width: 60px;
+    height: 23px;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+
+a.btn {
+    line-height: 25px;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+}
+
+span.ci-config-filename {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+a.btn.ci-config input[type="file"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75px;
+    height: 25px;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+#env-fields {
+    margin: 10px;
+}
+
+#curical-opts input {
+    float: left;
+    margin: 6px 3px 0px 0px;
+}
+
+#curical-opts label {
+    float: left;
+    margin-right: 10px;
+}
+
+#dlg-add-job label {
+    margin-top: 3px;
+}

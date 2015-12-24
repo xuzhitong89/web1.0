@@ -1,0 +1,845 @@
+.php-hl-default {
+    color: Black;
+}
+.php-hl-code {
+    color: Gray;
+}
+.php-hl-brackets {
+    color: Olive;
+}
+.php-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.php-hl-quotes {
+    color: red;
+}
+.php-hl-string {
+    color: Red;
+}
+.php-hl-identifier {
+    color: green;
+}
+.php-hl-builtin {
+    color: Teal;
+}
+.php-hl-reserved {
+    color: black;
+    font-weight: bold;
+}
+.php-hl-inlinedoc {
+    color: Blue;
+}
+.php-hl-var {
+    color: blue;
+}
+.php-hl-url {
+    color: Blue;
+}
+.php-hl-special {
+    color: Navy;
+}
+.php-hl-number {
+    color: Maroon;
+}
+.php-hl-inlinetags {
+    color: Blue;
+}
+.php-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 12px;
+}
+ol.php-hl-main pre {
+    margin: 0;
+    padding: 0;
+}
+.php-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.php-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+
+.xml-hl-default {
+    color: Black;
+}
+.xml-hl-code {
+    color: Gray;
+}
+.xml-hl-brackets {
+    color: Olive;
+}
+.xml-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.xml-hl-quotes {
+    color: red;
+}
+.xml-hl-string {
+    color: Red;
+}
+.xml-hl-identifier {
+    color: Blue;
+}
+.xml-hl-builtin {
+    color: Teal;
+}
+.xml-hl-reserved {
+    color: Green;
+}
+.xml-hl-inlinedoc {
+    color: Blue;
+}
+.xml-hl-var {
+    color: #000020;
+}
+.xml-hl-url {
+    color: Blue;
+}
+.xml-hl-special {
+    color: Navy;
+}
+.xml-hl-number {
+    color: Maroon;
+}
+.xml-hl-inlinetags {
+    color: Blue;
+}
+.xml-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+}
+.xml-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.xml-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+
+.html-hl-default {
+    color: Black;
+}
+.html-hl-code {
+    color: Gray;
+}
+.html-hl-brackets {
+    color: Olive;
+}
+.html-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.html-hl-quotes {
+    color: red;
+}
+.html-hl-string {
+    color: Red;
+}
+.html-hl-identifier {
+    color: Blue;
+}
+.html-hl-builtin {
+    color: Teal;
+}
+.html-hl-reserved {
+    color: Green;
+}
+.html-hl-inlinedoc {
+    color: Blue;
+}
+.html-hl-var {
+    color: #000020;
+}
+.html-hl-url {
+    color: Blue;
+}
+.html-hl-special {
+    color: Navy;
+}
+.html-hl-number {
+    color: Maroon;
+}
+.html-hl-inlinetags {
+    color: Blue;
+}
+.html-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+}
+.html-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.html-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+
+.css-hl-default {
+    color: Black;
+}
+.css-hl-code {
+    color: Gray;
+}
+.css-hl-brackets {
+    color: Olive;
+}
+.css-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.css-hl-quotes {
+    color: red;
+}
+.css-hl-string {
+    color: Red;
+}
+.css-hl-identifier {
+    color: Blue;
+}
+.css-hl-builtin {
+    color: Teal;
+}
+.css-hl-reserved {
+    color: Green;
+}
+.css-hl-inlinedoc {
+    color: Blue;
+}
+.css-hl-var {
+    color: #000020;
+}
+.css-hl-url {
+    color: Blue;
+}
+.css-hl-special {
+    color: Navy;
+}
+.css-hl-number {
+    color: Maroon;
+}
+.css-hl-inlinetags {
+    color: Blue;
+}
+.css-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+}
+.css-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.css-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+
+.javascript-hl-default {
+    color: Black;
+}
+.javascript-hl-code {
+    color: Gray;
+}
+.javascript-hl-brackets {
+    color: Olive;
+}
+.javascript-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.javascript-hl-quotes {
+    color: red;
+}
+.javascript-hl-string {
+    color: Red;
+}
+.javascript-hl-identifier {
+    color: Blue;
+}
+.javascript-hl-builtin {
+    color: Teal;
+}
+.javascript-hl-reserved {
+    color: Green;
+}
+.javascript-hl-inlinedoc {
+    color: Blue;
+}
+.javascript-hl-var {
+    color: #000020;
+}
+.javascript-hl-url {
+    color: Blue;
+}
+.javascript-hl-special {
+    color: Navy;
+}
+.javascript-hl-number {
+    color: Maroon;
+}
+.javascript-hl-inlinetags {
+    color: Blue;
+}
+.javascript-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+}
+.javascript-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.javascript-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+
+
+.sql-hl-default {
+    color: Black;
+}
+.sql-hl-code {
+    color: Gray;
+}
+.sql-hl-brackets {
+    color: Olive;
+}
+.sql-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.sql-hl-quotes {
+    color: red;
+}
+.sql-hl-string {
+    color: Red;
+}
+.sql-hl-identifier {
+    color: Blue;
+}
+.sql-hl-builtin {
+    color: Teal;
+}
+.sql-hl-reserved {
+    color: Green;
+}
+.sql-hl-inlinedoc {
+    color: Blue;
+}
+.sql-hl-var {
+    color: #000020;
+}
+.sql-hl-url {
+    color: Blue;
+}
+.sql-hl-special {
+    color: Navy;
+}
+.sql-hl-number {
+    color: Maroon;
+}
+.sql-hl-inlinetags {
+    color: Blue;
+}
+.sql-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+}
+.sql-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.sql-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+
+.source .copycode
+{
+    text-align: right;
+    float: right;
+}
+
+.source .copycode a
+{
+    cursor: pointer;
+    color: blue;
+}
+
+.source .copycode_hover a
+{
+    color: red;
+}
+.sh-hl-default {
+    color: Black;
+}
+.sh-hl-code {
+    color: Gray;
+}
+.sh-hl-brackets {
+    color: Olive;
+}
+.sh-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.sh-hl-quotes {
+    color: red;
+}
+.sh-hl-string {
+    color: Red;
+}
+.sh-hl-identifier {
+    color: green;
+}
+.sh-hl-builtin {
+    color: Teal;
+}
+.sh-hl-reserved {
+    color: black;
+    font-weight: bold;
+}
+.sh-hl-inlinedoc {
+    color: Blue;
+}
+.sh-hl-var {
+    color: blue;
+}
+.sh-hl-url {
+    color: Blue;
+}
+.sh-hl-special {
+    color: Navy;
+}
+.sh-hl-number {
+    color: Maroon;
+}
+.sh-hl-inlinetags {
+    color: Blue;
+}
+.sh-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 12px;
+    width: 100%;
+}
+ol.sh-hl-main pre {
+    margin: 0;
+    padding: 0;
+}
+
+ol.sh-hl-main span {
+    word-break: break-all;
+    white-space:pre-wrap;
+}
+
+.sh-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.sh-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+.py-hl-default {
+    color: Black;
+}
+.py-hl-code {
+    color: Gray;
+}
+.py-hl-brackets {
+    color: Olive;
+}
+.py-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.py-hl-quotes {
+    color: red;
+}
+.py-hl-string {
+    color: Red;
+}
+.py-hl-identifier {
+    color: green;
+}
+.py-hl-builtin {
+    color: Teal;
+}
+.py-hl-reserved {
+    color: black;
+    font-weight: bold;
+}
+.py-hl-inlinedoc {
+    color: Blue;
+}
+.py-hl-var {
+    color: blue;
+}
+.py-hl-url {
+    color: Blue;
+}
+.py-hl-special {
+    color: Navy;
+}
+.py-hl-number {
+    color: Maroon;
+}
+.py-hl-inlinetags {
+    color: Blue;
+}
+.py-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 12px;
+}
+ol.py-hl-main pre {
+    margin: 0;
+    padding: 0;
+}
+.py-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.py-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+.cpp-hl-default {
+    color: Black;
+}
+.cpp-hl-code {
+    color: Gray;
+}
+.cpp-hl-brackets {
+    color: Olive;
+}
+.cpp-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.cpp-hl-quotes {
+    color: red;
+}
+.cpp-hl-string {
+    color: Red;
+}
+.cpp-hl-identifier {
+    color: green;
+}
+.cpp-hl-builtin {
+    color: Teal;
+}
+.cpp-hl-reserved {
+    color: black;
+    font-weight: bold;
+}
+.cpp-hl-inlinedoc {
+    color: Blue;
+}
+.cpp-hl-var {
+    color: blue;
+}
+.cpp-hl-url {
+    color: Blue;
+}
+.cpp-hl-special {
+    color: Navy;
+}
+.cpp-hl-number {
+    color: Maroon;
+}
+.cpp-hl-inlinetags {
+    color: Blue;
+}
+.cpp-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 12px;
+}
+ol.cpp-hl-main pre {
+    margin: 0;
+    padding: 0;
+}
+.cpp-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.cpp-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+.c-hl-default {
+    color: Black;
+}
+.c-hl-code {
+    color: Gray;
+}
+.c-hl-brackets {
+    color: Olive;
+}
+.c-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.c-hl-quotes {
+    color: red;
+}
+.c-hl-string {
+    color: Red;
+}
+.c-hl-identifier {
+    color: green;
+}
+.c-hl-builtin {
+    color: Teal;
+}
+.c-hl-reserved {
+    color: black;
+    font-weight: bold;
+}
+.c-hl-inlinedoc {
+    color: Blue;
+}
+.c-hl-var {
+    color: blue;
+}
+.c-hl-url {
+    color: Blue;
+}
+.c-hl-special {
+    color: Navy;
+}
+.c-hl-number {
+    color: Maroon;
+}
+.c-hl-inlinetags {
+    color: Blue;
+}
+.c-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 12px;
+}
+ol.c-hl-main pre {
+    margin: 0;
+    padding: 0;
+}
+.c-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.c-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+.rb-hl-default {
+    color: Black;
+}
+.rb-hl-code {
+    color: Gray;
+}
+.rb-hl-brackets {
+    color: Olive;
+}
+.rb-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.rb-hl-quotes {
+    color: red;
+}
+.rb-hl-string {
+    color: Red;
+}
+.rb-hl-identifier {
+    color: green;
+}
+.rb-hl-builtin {
+    color: Teal;
+}
+.rb-hl-reserved {
+    color: black;
+    font-weight: bold;
+}
+.rb-hl-inlinedoc {
+    color: Blue;
+}
+.rb-hl-var {
+    color: blue;
+}
+.rb-hl-url {
+    color: Blue;
+}
+.rb-hl-special {
+    color: Navy;
+}
+.rb-hl-number {
+    color: Maroon;
+}
+.rb-hl-inlinetags {
+    color: Blue;
+}
+.rb-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 12px;
+}
+ol.rb-hl-main pre {
+    margin: 0;
+    padding: 0;
+}
+.rb-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.rb-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+.java-hl-default {
+    color: Black;
+}
+.java-hl-code {
+    color: Gray;
+}
+.java-hl-brackets {
+    color: Olive;
+}
+.java-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.java-hl-quotes {
+    color: red;
+}
+.java-hl-string {
+    color: Red;
+}
+.java-hl-identifier {
+    color: green;
+}
+.java-hl-builtin {
+    color: Teal;
+}
+.java-hl-reserved {
+    color: black;
+    font-weight: bold;
+}
+.java-hl-inlinedoc {
+    color: Blue;
+}
+.java-hl-var {
+    color: blue;
+}
+.java-hl-url {
+    color: Blue;
+}
+.java-hl-special {
+    color: Navy;
+}
+.java-hl-number {
+    color: Maroon;
+}
+.java-hl-inlinetags {
+    color: Blue;
+}
+.java-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 12px;
+}
+ol.java-hl-main pre {
+    margin: 0;
+    padding: 0;
+}
+.java-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.java-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}
+.pl-hl-default {
+    color: Black;
+}
+.pl-hl-code {
+    color: Gray;
+}
+.pl-hl-brackets {
+    color: Olive;
+}
+.pl-hl-comment {
+    color: #808080;
+    font-style: italic;
+}
+.pl-hl-quotes {
+    color: red;
+}
+.pl-hl-string {
+    color: Red;
+}
+.pl-hl-identifier {
+    color: green;
+}
+.pl-hl-builtin {
+    color: Teal;
+}
+.pl-hl-reserved {
+    color: black;
+    font-weight: bold;
+}
+.pl-hl-inlinedoc {
+    color: Blue;
+}
+.pl-hl-var {
+    color: blue;
+}
+.pl-hl-url {
+    color: Blue;
+}
+.pl-hl-special {
+    color: Navy;
+}
+.pl-hl-number {
+    color: Maroon;
+}
+.pl-hl-inlinetags {
+    color: Blue;
+}
+.pl-hl-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 12px;
+}
+ol.pl-hl-main pre {
+    margin: 0;
+    padding: 0;
+}
+.pl-hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.pl-hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px #505050;
+}

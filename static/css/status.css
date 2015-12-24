@@ -1,0 +1,53 @@
+/*
+    Document   : status
+    Description:
+        状态样式
+*/
+.idle,
+.success,
+.passed {
+    background: #89A54E;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.failed,
+.down {
+    background: #AA4643;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+td.completed,
+.skipped,
+.using,
+.null {
+    background: #E99D12;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.total {
+    background: #3F9ABC;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.blocked {
+    background: #999999;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.running {
+    background: #FFFFCC;
+}
+
+.loading {
+     background: url(../images/loading.gif) 48% 50% no-repeat;
+}
+a.idle {
+    color: #94CE59;
+    font-weight: bold;
+    background: #FFFFFF;
+}
+a.down {
+    color: #E24588;
+    font-weight: bold;
+    background: #FFFFFF;
+}

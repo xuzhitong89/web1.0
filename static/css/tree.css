@@ -1,0 +1,28 @@
+.treeview {
+    padding: 10px 0px 0px 30px;
+    overflow-y: auto;
+}
+
+.treeview .hitarea {
+    background: url(../images/icons.gif) 14px 5px no-repeat;
+    height: 18px;
+    width: 25px;
+    margin-left: -30px;
+    float: left;
+    cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+    display: inline;
+    float:none;
+}
+
+.treeview li {
+    padding: 1px 0px 1px 10px;
+}
+
+.treeview li a {
+    color: #000000;
+}
+
+.treeview .expandable-hitarea { background-position: -9px 5px; }

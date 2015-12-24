@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>欢迎登陆toast</title>
+        <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" type="text/css" href="static/css/login.css" />
+        <script type="text/javascript" src="static/js/jquery.js"></script>
+        <script type="text/javascript" src="static/js/jquery.placeholder.js"></script>
+
+    </head>
+    <body>
+         <div id="container">
+            <div class="row-fluid">
+                <div class="span5">
+                    <img src="static/images/login.jpg"  class="logo"/>
+
+                </div>
+                <div><span style="color:red;">{{ error }}</span></div>
+                <div class="span6">
+                    <form action="/login" method="post">
+                    <div class="row-fluid row-login-input">
+
+                    <input class="span12"  title="用户名" name="username" id="_username" type="text" placeholder="用户名">
+                    </div>
+                     <br>
+
+                    <div class="row-fluid">
+                       <input class="span12" placeholder="密码" title="密码" name="password" id="_password" type="password">
+                    </div>
+                        <br>
+                    <div class="row-fluid">
+                        <input class="btn btn-primary" type="submit" name="yt0" value="登录">
+
+                    </div>
+
+                   </form>
+                </div>
+            </div>
+        </div>
+    <div id="cloud" class="png"></div>
+    </body>
+</html>

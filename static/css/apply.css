@@ -1,0 +1,60 @@
+/* login css */
+html {
+    height: 100%;
+    background: #EDEDED;
+}
+
+div.signup-form {
+    position: absolute;
+    left: 50%;
+    margin-top: 30px;
+    margin-left: -310px;
+    width: 560px;
+    background: #FFFFFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px 30px 10px 30px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px dashed #CFCFCF;
+    margin: 8px 0px;
+    padding: 0;
+}
+
+span.signup-label {
+    color: #666666;
+    font-size: 1.7em;
+    font-weight: bold;
+    font-style: italic;
+    color: #CFCFCF;
+}
+
+.well-smallest {
+    padding: 6px 9px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.placeholder {
+    color: #D0D0D0;
+}
+
+.row-product-list {
+    margin-bottom: 30px;
+}
+
+.form-horizontal .controls {
+    margin-left: 0;
+}
+
+div.applied {
+    padding-bottom: 25px;
+}

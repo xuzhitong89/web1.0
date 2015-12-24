@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 10px;
+    color: #555555;
+    font: normal 10pt Arial,Helvetica,sans-serif;
+}
+
+.idle,
+.passed {
+    background: #94CE59;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.failed,
+.down {
+    background: #E24588;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+td.completed,
+.skipped,
+.using,
+.null {
+    background: #E99D12;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.total {
+    background: #3F9ABC;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.blocked {
+    background: #999999;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.running {
+    background: #FFFFCC;
+}
+
+table.detail-view {
+    background: white;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0;
+}
+
+table.detail-view th,
+table.detail-view td {
+    font-size: 0.9em;
+    border: 1px white solid;
+    padding: 0.3em 0.6em;
+    vertical-align: top;
+}
+
+table.detail-view th {
+    text-align: right;
+    width: 140px;
+}
+
+table.detail-view tr.odd {
+    background:#E5F1F4;
+}
+
+table.detail-view tr.even {
+    background:#F8FBFC;
+}
+
+table.detail-view tr.odd th {
+    background:#E1EBF0;
+}
+
+table.detail-view tr.even th {
+    background:#E5F1F4;
+}
+
+table.detail-view tr.even td table {
+    border: none;
+    border-collapse: collapse;
+    padding: 0.3em 0.6em;
+    vertical-align: top;
+}
+
+table.items {
+    background: white;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px #D0E3EF solid;
+}
+
+table.items th,
+table.items td {
+    font-size: 0.9em;
+    border: 1px white solid;
+    padding: 0.3em;
+}
+
+table.items th {
+    color: white;
+    background: #6885A4;
+    text-align: center;
+}
+
+table.items th a {
+    color: #EEEEEE;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+table.items tr.even {
+    background: #F8FBFC;
+}
+
+table.items tr.odd {
+    background: #E5F1F4;
+}
+
+.summary {
+    margin: 0 0 5px 0;
+    text-align: right;
+}
