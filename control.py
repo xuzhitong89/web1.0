@@ -1,6 +1,6 @@
 # --coding: utf-8 --
 import jenkins
-server = jenkins.Jenkins('http://172.16.14.189:8087/jenkins/', username='xuzhitong', password='qaz123')
+server = jenkins.Jenkins('http://172.16.14.189:8080/jenkins/', username='xuzhitong', password='qaz123')
 
 #获取job列表信息
 def get_jobs_list():
@@ -46,12 +46,12 @@ def get_node():
 def get_node_indo(slavename):
     return server.get_node_info(slavename)
 if __name__ == "__main__":
-    print buid_job('job')
+    #print buid_job('job')
     print get_jobs_list()
     print get_views_list()
     print get_node()
-    print get_node_indo('xiaobin')
-    t = get_job_config('job')
-    print t
-    create_job('job4',t)
+    #print get_node_indo('xiaobin')
+    #t = get_job_config('job')
+    #print t
+    #create_job('job4',t)
     print get_jobs_list()

@@ -7,11 +7,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String,create_engine
 #连接数据库
 #engine = create_engine('mysql://root:bitbao@127.0.0.1/report?charset=utf8', echo=False)
-<<<<<<< HEAD
-engine = create_engine('mysql+mysqlconnector://root:123456@localhost:3307/mysqlTest',echo=True)
-=======
+
+#engine = create_engine('mysql+mysqlconnector://root:123456@localhost:3307/mysqlTest',echo=True)
+
 engine = create_engine('mysql+mysqlconnector://root:@localhost:3306/toast')
->>>>>>> 20c48185164c0008fe2f0e3d261d742f9e2ac2b7
+
 Base = declarative_base()
 metadata = Base.metadata
 class User(Base):

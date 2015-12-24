@@ -100,10 +100,7 @@ class createTask():
     def POST(self):
         raise web.seeother('/case')
 
-<<<<<<< HEAD
-'''
 
-=======
 
 class test():
     @login_required
@@ -131,4 +128,3 @@ class userList():
     @login_required
     def GET(self):
         return adminrender.userlist(d)
->>>>>>> 20c48185164c0008fe2f0e3d261d742f9e2ac2b7
